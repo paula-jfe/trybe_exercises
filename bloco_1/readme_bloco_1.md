@@ -3,76 +3,67 @@ Parte II - Manipulação & Busca
 
 countries: Na pasta unix_tests, baixe um arquivo com os nomes de todos os países do mundo utilizando o comando curl: curl -o countries.txt "https://gist.githubusercontent.com/kalinchernev/486393efcca01623b18d/raw/daa24c9fea66afb7d68f8d69f0c4b8eeb9406e83/countries"
 
-# Mostre todo o conteúdo do arquivo countries.txt na tela.
-# Mostre o conteúdo de countries.txt, página por página, até encontra a Zambia.
-# Mostre novamente o conteúdo de countries.txt página por página, mas agora utilize um comando para buscar por Zambia.
-# Busque por Brazil no countries.txt.
-# Busque novamente por brazil, mas agora utilizando o lower case.
+- Mostre todo o conteúdo do arquivo countries.txt na tela.
+- Mostre o conteúdo de countries.txt, página por página, até encontra a Zambia.
+- Mostre novamente o conteúdo de countries.txt página por página, mas agora utilize um comando para buscar por Zambia.
+- Busque por Brazil no countries.txt.
+- Busque novamente por brazil, mas agora utilizando o lower case.
 
 phrases: Para os próximos exercícios, crie um novo arquivo chamado phrases.txt e adicione algumas frases a sua escolha. Não precisa criar o arquivo pelo terminal.
 
-# Busque pelas frases que não contenham a palavra fox.
-# Conte o número de palavras do arquivo phrases.txt.
-# Conte o número de linhas do arquivo phrases.txt.
+- Busque pelas frases que não contenham a palavra fox.
+- Conte o número de palavras do arquivo phrases.txt.
+- Conte o número de linhas do arquivo phrases.txt.
 
 empty.tbt and empty.pdf: Crie os arquivos empty.tbt e empty.pdf.
 
-# Liste todos os arquivos do diretório unix_tests.
-# Liste todos os arquivos que terminem com txt.
-# Liste todos os arquivos que terminem com tbt ou txt.
-# Acesse o manual do comando ls.
+- Liste todos os arquivos do diretório unix_tests.
+- Liste todos os arquivos que terminem com txt.
+- Liste todos os arquivos que terminem com tbt ou txt.
+- Acesse o manual do comando ls.
 
 ________________________________________________________________________________________________________________________________________________________________________________________________________
 bloco_1/dia_4
 
-exnomes1: Considere o arquivo exnomes1.txt para os exemplos a seguir
-# Seu conteúdo inicial é:
+exnomes1: Considere o arquivo exnomes1.txt para os exemplos a seguir. Seu conteúdo inicial é:
 Ana
 Maria
 João
 
-# O > redireciona a saída padrão para um arquivo, sendo assim 
-# caso haja algum conteúdo no arquivo será substituído
+- O > redireciona a saída padrão para um arquivo, sendo assim caso haja algum conteúdo no arquivo será substituído.
 exnomes2: cat > exnomes2.txt (exnomes2 é cópia de exnomes1)
 
-# Digite o nome "Amanda" e encerre o cat (Ctrl + D)
-# Resultado
+- Digite o nome "Amanda" e encerre o cat (Ctrl + D). Resultado:
 Amanda
 
-# O >> anexa saída padrão a um arquivo, sendo assim ele adiciona 
-# o que for digitado ao final do arquivo em questão
+- O >> anexa saída padrão a um arquivo, sendo assim ele adiciona o que for digitado ao final do arquivo em questão:
 cat >> exnomes3.txt (exnomes3 é cópia de exnomes2)
 
-# Digite o nome "Fernanda", depois `enter` e o nome "Fabiano" e encerre o cat (Ctrl + D)
-# Resultado
+- Digite o nome "Fernanda", depois `enter` e o nome "Fabiano" e encerre o cat (Ctrl + D). Resultado:
 Amanda
 Fernanda
 Fabiano
 
-# O | canaliza a saída do primeiro comando para a entrada do segundo,
-# dessa forma conseguimos realizar comandos de forma sucessiva
-# Considere que queremos uma lista com todos os nomes que contenham
-# a letra "f" e que nosso resultado esteja em ordem alfabética
-# Para isso podemos realizar o comando abaixo
-# grep f nomes.txt | sort
-# Resultado
+- O | canaliza a saída do primeiro comando para a entrada do segundo, dessa forma conseguimos realizar comandos de forma sucessiva.
+- Considere que queremos uma lista com todos os nomes que contenham a letra "f" e que nosso resultado esteja em ordem alfabética.
+- Para isso podemos realizar o comando abaixo grep f nomes.txt | sort. Resultado: 
 Fabiano
 Fernanda
 
 Parte I - Comandos de Input e Output
-# Navegue até a pasta unix_tests;
+- Navegue até a pasta unix_tests.
 
 exskills1: Crie um arquivo texto pelo terminal com o nome exskills1.txt e adicione os valores Internet, Unix e Bash, um em cada linha.
 
 exskills2: Adicione mais 5 itens à sua lista de skills e depois imprima a lista ordenada no terminal. (exskills2 é cópia de exskills1 + 5 itens)
 
-# Conte quantas linhas tem o arquivo skills2.txt.
+- Conte quantas linhas tem o arquivo skills2.txt.
 extopskills: Crie um arquivo chamado extopskills.txt usando o skills2.txt, contendo as 3 primeiras skills em ordem alfabética.
 
 exphrases2: Crie um novo arquivo chamado exphrases2.txt pelo o terminal e adicione algumas frases de suas escolha.
 
-# Conte o número de linhas que contêm as letras br.
-# Conte o número de linhas que não contêm as letras br.
+- Conte o número de linhas que contêm as letras br.
+- Conte o número de linhas que não contêm as letras br.
 
 exphrases3: Adicione dois nomes de países ao final do arquivo exphrases2.txt (exphrases3.txt é cópia de exphrases2.txt + 2 nomes de países).
 
@@ -88,8 +79,8 @@ Abra o terminal no VSCode, para isso vá a aba de navegação e clique em Termin
  #!/bin/bash
  echo "Meu primeiro script em Shell Script!"
 
-# Para executar o script certifique-se de:
-# Salvar a alteração com Ctrl + s. Estar no diretório em que o arquivo se encontra e rode o comando ./ex1.sh
+- Para executar o script certifique-se de:
+- Salvar a alteração com Ctrl + s. Estar no diretório em que o arquivo se encontra e rode o comando ./ex1.sh
 
 ex2: Com o conceito de variáveis bem explicado, fomos apresentados a uma forma de interagir com o programa e através da entrada de um usuário, definir o valor de uma variável com o comando read. Esse comando contém um parâmetro que permite que um texto seja adicionado na mesma linha, evitando o uso do echo:
  #!/bin/bash
