@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+Metodologias Ágeis
+Web
+JavaScript
+Shell Script
+CSS
