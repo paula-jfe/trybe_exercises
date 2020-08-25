@@ -6,6 +6,7 @@ exteste:
 3) Caso exista algo, verifique se é necessário e faça o commit, ou remova-o.
 4) Crie uma nova branch com o nome shell-script-changes e faça checkout nela;
 5) Em algum arquivo .sh, na linha #2 , adicione o comentário: "Eu sou Tryber e...";
+<<<<<<< HEAD
 6) Faça um `git add nomeDoSeuArquivoShell`;
 7) Agora um `git commit -m "Mensagem que você gostaria"`;
 8) E por último um `git push -u origin shell-script-changes`;
@@ -24,3 +25,5 @@ exteste:
 22) Agora, vá até página do outro Pull Request (branch shell-script-updates) e tente fazer o merge clicando no mesmo botão. Reparou que ele está bloqueado? Isso acontece porque esse Pull Request está tentando alterar a mesma linha de código com um conteúdo diferente, e o Git não consegue determinar sozinho qual das duas linhas é a correta.
 23) Você terá que resolver esse conflito antes de "mergear" o Pull Request. Clique no botão "Resolve conflicts", escolha uma das duas versões do texto (lembre-se de apagar as linhas com <<<<<<< e >>>>>>>, elas são criadas apenas para dar uma identificação mais visual ao problema) . Depois clique em "Mark as resolved" e, em seguida, em "Commit merge".
 24) Agora você deve conseguir "mergear" seu Pull Request normalmente. 😎
+=======
+>>>>>>> acf92b5e6051fee27c3e73546c9c78527cb39a3b
