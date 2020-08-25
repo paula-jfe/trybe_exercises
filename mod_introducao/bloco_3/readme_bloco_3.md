@@ -41,5 +41,3 @@ bloco_3/dia_4
 ex1_display_as_inline_elements: Display the list items as inline elements.
 
 ex2_display_as_block_elements: Display the strong elements as block elements.
-
-
