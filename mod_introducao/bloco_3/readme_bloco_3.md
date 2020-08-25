@@ -1,8 +1,8 @@
 bloco_3/dia_1
 
-desafio1_escrever_um_poema: Dê um título ao seu poema. Para praticar os conceitos básicos de HTML, você vai escrever e marcar um poema. Para começar, qual será o título do seu poema? Usando a tag <h1> que vimos, adicione um cabeçalho ao seu poema. Esse será o seu título.
+desafio1_escrever_um_poema: Dê um título ao seu poema. Para praticar os conceitos básicos de HTML, você vai escrever e marcar um poema. Para começar, qual será o título do seu poema? Usando a tag h1 que vimos, adicione um cabeçalho ao seu poema. Esse será o seu título.
 
-desafio2_voce_pode_aprender_sobre_tags_de_texto: Marque o texto. Criamos essa página com as palavras de "Você pode aprender qualquer coisa", um vídeo feito pela Khan Academy. Usando as tags <strong> e <em> que você acabou de aprender, marque o texto para mostrar o que você acha deve ser enfatizado e destacado.
+desafio2_voce_pode_aprender_sobre_tags_de_texto: Marque o texto. Criamos essa página com as palavras de "Você pode aprender qualquer coisa", um vídeo feito pela Khan Academy. Usando as tags strong e em que você acabou de aprender, marque o texto para mostrar o que você acha deve ser enfatizado e destacado.
 
 desafio3_sua_lista_de_aprendizagem: Inicie uma lista! O que você quer aprender? Um monte de coisas, eu aposto! Vamos criar uma lista numerada com algumas dessas coisas. Você se lembra de como iniciar uma lista numerada?
 
@@ -14,18 +14,18 @@ ________________________________________________________________________________
 
 bloco_3/dia_2
 
-desafio_1_ids_sazonais: Pinte o título inverno e verão. Essa página web descreve as estações favoritas de Olaf, um boneco de neve que ama o sol. Ambas as tags <h2> têm ids, mas não há regras CSS para estilizá-las. Adicione 2 regras que atribuam cor aos títulos.
+desafio_1_ids_sazonais: Pinte o título inverno e verão. Essa página web descreve as estações favoritas de Olaf, um boneco de neve que ama o sol. Ambas as tags h2 têm ids, mas não há regras CSS para estilizá-las. Adicione 2 regras que atribuam cor aos títulos.
 
-desafio2_tamanhos_de_fonte_enormes: Crie tamanhos de fonte grandes. Essa página web inclui a letra de uma música sobre palavras grandes. Colocamos as classes 'big' e 'bigger' nas tags <em> que descrevem palavras grandes, mas não as estilizamos. Adicione uma propriedade às regras CSS para tornar grande o tamanho das palavras 'big', e para tornar ainda maior o tamanho das palavras 'bigger'. Use as mesmas unidades para ambas as propriedades.
+desafio2_tamanhos_de_fonte_enormes: Crie tamanhos de fonte grandes. Essa página web inclui a letra de uma música sobre palavras grandes. Colocamos as classes 'big' e 'bigger' nas tags em que descrevem palavras grandes, mas não as estilizamos. Adicione uma propriedade às regras CSS para tornar grande o tamanho das palavras 'big', e para tornar ainda maior o tamanho das palavras 'bigger'. Use as mesmas unidades para ambas as propriedades.
 
 desafio3_formatos_de_fonte_famosos: Faça citações em itálico. Essa página web mostra algumas citações e declarações famosas de filmes e programas de TV. Adicione uma regra CSS que faz com que todas as citações tenham uma fonte de estilo itálico, de forma que elas se pareçam mais com citações.
 ____________________________________________________________________________________________________________________________________________________________________________________________________________
 
 bloco_3/dia_3
 
-desafio_1_group_the_groupers: Adicione spans. Esta página descreve garoupas, um tipo de grande peixe oceânico. Na primeira etapa, sua função é fazer com que as primeiras frases de cada parágrafo se destaquem. Comece adicionando tags <span> ao redor de cada primeira frase. Em seguida, dê as duas tags <span> uma classe chamada "primeira frase".
+desafio_1_group_the_groupers: Adicione spans. Esta página descreve garoupas, um tipo de grande peixe oceânico. Na primeira etapa, sua função é fazer com que as primeiras frases de cada parágrafo se destaquem. Comece adicionando tags span ao redor de cada primeira frase. Em seguida, dê as duas tags span uma classe chamada "primeira frase".
 
-desafio_2_the_overflowing_ocean: Redimensione o div. Esta página descreve o oceano, com uma imagem e alguns parágrafos que estão dentro de uma <div>. Nesta primeira etapa, estilize o <div> que tem uma classe 'info', de modo que ocupe 70% da largura e tenha 200 px de altura. Agora, faça com que a div corte o texto que transborda e apresente uma barra de rolagem. Nesta última etapa, escreva uma regra CSS para a classe ‘pic’ que redimensiona a imagem para ocupar a mesma largura do texto.
+desafio_2_the_overflowing_ocean: Redimensione o div. Esta página descreve o oceano, com uma imagem e alguns parágrafos que estão dentro de uma div. Nesta primeira etapa, estilize o div que tem uma classe 'info', de modo que ocupe 70% da largura e tenha 200 px de altura. Agora, faça com que a div corte o texto que transborda e apresente uma barra de rolagem. Nesta última etapa, escreva uma regra CSS para a classe ‘pic’ que redimensiona a imagem para ocupar a mesma largura do texto.
 
 desafio3_the_boxer_model: Adicionar bordas. Esta página da Web exibe uma galeria de fotos de cães boxer. Nesta primeira etapa, adicione uma borda a todas as fotos. Tente fazer com que pareça uma moldura de foto, se puder. As fotos parecem muito próximas umas das outras. Adicione margem a elas, em todos os lados ou apenas nos lados que importam para separá-las. As fotos estão muito próximas da div da galeria, e parece estranho. Adicione preenchimento em todos os lados da div da galeria para que tenha uma aparência melhor.
 
@@ -40,6 +40,6 @@ bloco_3/dia_4
 
 ex1_display_as_inline_elements: Display the list items as inline elements.
 
-ex2_display_as_block_elements: Display the <strong> elements as block elements.
+ex2_display_as_block_elements: Display the strong elements as block elements.
 
 
