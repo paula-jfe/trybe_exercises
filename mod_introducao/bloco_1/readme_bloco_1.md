@@ -67,9 +67,9 @@ exphrases2: Crie um novo arquivo chamado exphrases2.txt pelo o terminal e adicio
 
 exphrases3: Adicione dois nomes de países ao final do arquivo exphrases2.txt (exphrases3.txt é cópia de exphrases2.txt + 2 nomes de países).
 
-exbunch_Of_Things: Crie um novo arquivo chamado bunch_of_things.txt com os conteúdos dos arquivos phrases2.txt e countries.txt
+exbunch_of_things: Crie um novo arquivo chamado bunch_of_things.txt com os conteúdos dos arquivos phrases2.txt e countries.txt
 
-exbunch_Of_Things2: Ordene o arquivo bunch_of_things.txt (exbunch_Of_Things2 é cópia de exbunch_Of_Things ordenado).
+exbunch_of_things2: Ordene o arquivo bunch_of_things.txt (exbunch_Of_Things2 é cópia de exbunch_of_things ordenado).
 
 ___________________________________________________________________________________________________________________________________________________
 bloco_1/dia_5
