@@ -1,4 +1,4 @@
-var fruits = ["Apple", "Banana", "Orange"];
-for (x in fruits) {
-  console.log(x);
+var i; 
+for (let i = 0; i < 10; i++) {
+  console.log(i);
 }
