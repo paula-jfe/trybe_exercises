@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The JavaScript typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+<p id="valOne"><span>Tipo atual da variável valueOne: </span></p>
+<p id="valTwo"><span>Tipo atual da variável valueTwo: </span></p>
+<p id="valThree"><span>Tipo atual da variável valueThree: </span></p>
+<p id="valFour"><span>Tipo atual da variável valueFour: </span></p>
+<p id="valFive"><span>Tipo atual da variável valueFive: </span></p>
+<p id="valSix"><span>Tipo atual da variável valueSix: </span></p>
+<p id="valSeven"><span>Tipo atual da variável valueSeven: </span></p>
+<p id="valEight"><span>Tipo atual da variável valueEight: </span></p>
+<p id="valNewTwo"><span>Tipo atual da variável valueNewTwo: </span></p>
+<p id="valNewEight"><span>Tipo atual da variável valueNewEight: </span></p>
+
+<script>
+
+	
+	let valueOne = "lucas";
+    let valueTwo = "tunico";
+    let valueThree = 3.14;
+    let valueFour = NaN;
+    let valueFive = false;
+    let valueSix = undefined;
+    let valueSeven = function() {};
+    let valueEight = null;
+    let valueNewTwo = 2;
+    let valueNewEight = false;
+     	
+	
+    document.getElementById("valOne").innerHTML +=  typeof valueOne;
+    document.getElementById("valTwo").innerHTML += typeof valueTwo;
+   	document.getElementById("valThree").innerHTML += typeof valueThree;
+    document.getElementById("valFour").innerHTML += typeof valueFour;
+    document.getElementById("valFive").innerHTML += typeof valueFive;
+    document.getElementById("valSix").innerHTML += typeof valueSix;
+    document.getElementById("valSeven").innerHTML += typeof valueSeven;
+    document.getElementById("valEight").innerHTML += typeof valueEight;
+    document.getElementById("valNewTwo").innerHTML += typeof valueNewTwo;
+    document.getElementById("valNewEight").innerHTML += typeof valueNewEight;
+    
+
+</script>
+</body>
+</html>
