@@ -152,3 +152,48 @@ exlogica1: Utilizando o array abaixo, percorra-o somando todos os valores. Caso 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________
+
+bloco_4/dia_4
+
+exjsobjects1: Alert "John" by extracting information from the person object.
+
+exjsobjects2: Add the following property and value to the person object: country: Norway. 
+
+exjsobjects3: Create an object called person with name = John, age = 50. Then, access the object to alert("John is 50").
+
+exjsobjects4: Mostre a descrição do módulo Internet. Mostre qual é a última semana do módulo HTML. Mostre qual é o tipo do módulo Shell.
+
+exjsloops1: Create a loop that runs through each item in the fruits array.
+
+
+
+
+
+
+
+
