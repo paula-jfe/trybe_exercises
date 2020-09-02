@@ -147,34 +147,18 @@ bloco_4/dia_3
 
 exlogica1: Utilizando o array abaixo, percorra-o somando todos os valores. Caso o valor final seja maior que 15, imprima-o. Caso seja igual ou menor que 15, imprima a mensagem: "valor menor que 16": let fruits = [3, 4, 10, 1, 12].
 
+expratico1: Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualquer, seja n > 1, imprima na tela um quadrado feito de asteriscos de lado de tamanho n. 
 
+expratico2: Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. 
 
+expratico3: Agora inverta o lado do triângulo.
 
+expratico4: Depois, faça uma pirâmide com n asteriscos de base.
 
+exbonus1: Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar. Por último, façamos com que a variável seja incrementada com o valor correspondente a cada loop. n = 7
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+exbonus2: Faça um programa que diz se um número definido numa variável é primo ou não. Um número primo é um número que só é divisível por 1 e por ele mesmo, ou seja, a divisão dele com quaisquer outros números dá resto diferente de zero.
+Dica: você vai precisar de fazer um loop que vá de 0 ao número definido; Além disso, vai precisar de fazer uma checagem a cada iteração e armazenar os resultados em algum lugar.
 
 _____________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -189,6 +173,70 @@ exjsobjects3: Create an object called person with name = John, age = 50. Then, a
 exjsobjects4: Mostre a descrição do módulo Internet. Mostre qual é a última semana do módulo HTML. Mostre qual é o tipo do módulo Shell.
 
 exjsloops1: Create a loop that runs through each item in the fruits array.
+
+exrefatorado1 até exrefatorado11: Pegue cada um dos exercícios da primeira parte das nossas aulas de JavaScript e faça com que todos eles sejam funções de um mesmo arquivo. As variáveis que você define no começo de cada arquivo devem ser removidas e transformadas em parâmetros das funções. Após refatorar o seu código, verifique se ele ainda está funcionando conforme especificado. Teste cada função com algumas entradas diferentes.
+
+<!-- Usando o objeto abaixo, faça os exercícios a seguir:
+Copiar
+let info = {
+  personagem: "Margarida",
+  origem: "Pato Donald",
+  nota: "Namorada do personagem principal nos quadrinhos do Pato Donald",
+}; -->
+
+exparteI1: Imprima no console uma mensagem de boas-vindas para a personagem acima, incluindo seu nome. Valor esperado no console: Bem-vinda, Margarida.
+
+exparteI2: Insira no objeto uma nova propriedade com o nome de chave "recorrente" e o valor "Sim" e, em seguida, imprima o objeto no console. Valor esperado no console:
+  {
+    personagem: 'Margarida',
+    origem: 'Pato Donald',
+    nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+    recorrente: 'Sim'
+  };
+
+exparteI3: Faça um for/in que mostre todas as chaves do objeto. Valor esperado no console:
+  personagem
+  origem
+  nota
+  recorrente
+
+exparteI4: Faça um novo for/in, mas agora mostre todos os valores das chaves do objeto. Valor esperado no console:
+  Margarida
+  Pato Donald
+  Namorada do personagem principal nos quadrinhos do Pato Donald
+  Sim
+
+exparteI5: Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: "Tio Patinhas", "Christmas on Bear Mountain, Dell's Four Color Comics #178", "O último MacPatinhas", "Sim". Valor esperado no console:
+Margarida e Tio Patinhas
+Pato Donald e Christmas on Bear Mountain, Dell's Four Color Comics #178
+Namorada do personagem principal nos quadrinhos do Pato Donald e O último MacPatinhas
+Ambos recorrentes // Atenção para essa última linha!
+
+<!-- Agora vamos fazer um exercício que vai deixar claro como funções com responsabilidades bem definidas deixam o código mais bem escrito. -->
+
+exparteII1: Crie uma função que receba uma string e retorne true se for um palíndromo, ou false, se não for. Exemplo de palíndromo: arara.
+verificaPalindrome("arara");
+Retorno esperado: true
+verificaPalindrome("desenvolvimento");
+Retorno esperado: false
+
+exparteII2:
+
+exparteII3:
+
+exparteII4:
+
+exparteII5:
+
+exparteII6:
+
+exparteII7:
+
+exbonus1:
+
+exbonus2:
+
+
 
 
 
