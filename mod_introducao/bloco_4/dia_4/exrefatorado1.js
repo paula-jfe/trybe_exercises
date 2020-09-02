@@ -1,7 +1,17 @@
-let a = 50;
-let b = 5;
+function operacoesAritmeticas(a, b) {
+    var resultado = a + b;
+  /*   a - b;
+    a * b;
+    a / b;
+    a % b; */
+    return resultado;
+}
 
-var op1 = a + b;
+operacoesAritmeticas(50, 10);
+
+
+
+/* var op1 = a + b;
 console.log(op1);
 
 var op2 = a - b;
@@ -15,7 +25,7 @@ console.log(op4);
 
 var op5 = a % b;
 console.log(op5);
-
+ */
 
 
 
