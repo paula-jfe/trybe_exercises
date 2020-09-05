@@ -14,6 +14,4 @@ function maisCaracteres(nomes) {
     return nomeAChecar;
 }
 
-
-
 console.log(maisCaracteres(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));

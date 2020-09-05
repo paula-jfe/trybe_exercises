@@ -24,8 +24,6 @@ let info3 = {
    } else {
        info3.recorrente = info1.recorrente + " e " + info2.recorrente;
    }
-
-
    for (let i in info3) { 
     console.log(info3[i]);
    } 

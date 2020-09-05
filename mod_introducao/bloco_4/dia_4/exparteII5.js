@@ -21,7 +21,5 @@ function repete(inteiros) {
     }
     return inteiros[numRepetido];
 }
-    
- 
 
- console.log(repete([2, 3, 2, 5, 8, 2, 3]));
+console.log(repete([2, 3, 2, 5, 8, 2, 3]));
