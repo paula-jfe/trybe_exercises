@@ -19,7 +19,7 @@ function checar(palindromo) {
     }
 }
 
-console.log(arrayPalindromo);
+/* console.log(arrayPalindromo);
 console.log(reverseArray);
-console.log(joinPalindromo);
+console.log(joinPalindromo); */
 console.log(checar(palindromo));
