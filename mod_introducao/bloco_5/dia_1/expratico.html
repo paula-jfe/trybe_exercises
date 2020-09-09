@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.1</title>
+
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Exercício 5.1 - JavaEscripito </h1>
+    <div class="main-content">
+      <div class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </div>
+    </div>
+    <script>
+
+        function ex1() {
+            let paragrafo = document.getElementsByTagName("p")[1];
+            paragrafo.innerText = "Programando muito";
+        }
+        //ex1();
+
+        function corQuadrado1() {
+            let quadrado1 = document.getElementsByClassName("main-content")[0];
+            quadrado1.style.background = "rgb(76,164,109)";
+        }
+        //corQuadrado1();
+
+        function corQuadrado2() {
+            let quadrado2 = document.getElementsByClassName("center-content")[0];
+            quadrado2.style.background = "white";
+        }
+        //corQuadrado2();
+
+        function textoH1() {
+            let corrigirH1 = document.getElementsByTagName("h1")[0];
+            corrigirH1.innerText = "Seja Tryber você também!"
+        }
+        //textoH1();
+
+        function maiusculo() {
+            let pMaiusculo = document.getElementsByTagName('p')[0];
+            pMaiusculo.innerText = pMaiusculo.innerText.toUpperCase();
+        }
+        //maiusculo();
+
+        function conteudoDeP() {
+            exibeP = document.getElementsByTagName('p');
+            for (let i = 0; i < exibeP.length; i += 1) {
+                console.log (exibeP[i].innerText);
+            }
+        }
+        //conteudoDeP();
+
+    </script>
+  </body>
+</html>

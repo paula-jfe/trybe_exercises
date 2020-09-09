@@ -1,10 +1,12 @@
 function operacoesAritmeticas(a, b) {
-    var resultado = a + b;
-  /*   a - b;
-    a * b;
-    a / b;
-    a % b; */
-    return resultado;
+    let resultadoSoma = a + b;
+    /*  
+    let resultadoSubtracao = a - b;
+    let resultadoMultiplicacao = a * b;
+    let resultadoDivisao = a / b;
+    let resultadoModulo = a % b; 
+    */
+    return resultadoSoma;
 }
 
 operacoesAritmeticas(50, 10);
