@@ -71,35 +71,31 @@ let stack = document.getElementById("stack")
 stack.style.backgroundColor = "red";
 
 //Colunas por getElementsByClassName
-function style_column(column_position, color){
-    var column=document.getElementsByClassName("column_"+column_position)[0]
-	column.style.backgroundColor = ""+color
-}
+let columnLeft = document.getElementsByClassName("column_left")[0]
+columnLeft.style.backgroundColor = "blue";
 
-//Quadrados violetas e roxos querySelectorAll 
-function style_big_squares(which_column_class_name, color){
-    document.querySelectorAll(which_column_class_name+"> div").forEach((e)=>{
-	e.style.backgroundColor = ""+color
-})}
+let columnRight = document.getElementsByClassName("column_right")[0]
+columnRight.style.backgroundColor = "green";
 
-style_column("left","blue")
-style_column("right","green")
-
-//Quadrados rosas dentro dos quadrados violetas e roxos
-style_big_squares(".column_left", "violet")
-style_big_squares(".column_right", "purple")
-
-//Todos os mini quadrados
-document.querySelectorAll("div>div>div>div").forEach((mini)=>{
-	mini.style.backgroundColor = "orange"
+//Todos os mini quadrados de baixo
+document.querySelectorAll("div>div>div>div").forEach((downSquares) => {
+	downSquares.style.backgroundColor = "orange"
 })
 
 //Todos os mini quadrados de cima
-document.querySelectorAll("#stack>div").forEach((e)=>{
-    var mini_top=document.querySelector("."+e.className+">div>div")
-	mini_top.style.backgroundColor = "pink"
-
+document.querySelectorAll("#stack > div").forEach((i) => {
+    let upSquares = document.querySelector("." + i.className + "> div > div ")
+	upSquares.style.backgroundColor = "pink";
 })
+
+//Quadrados violetas e roxos querySelectorAll 
+function quadradosInternos(lado, cor) {
+    document.querySelectorAll(lado + "> div").forEach((i) => {
+	i.style.backgroundColor = "" + cor;
+})}
+
+quadradosInternos(".column_left", "violet");
+quadradosInternos(".column_right", "purple");
 
 </script>
 
