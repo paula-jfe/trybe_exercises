@@ -1,4 +1,4 @@
-exteste1: Para começar a praticar, copie para um arquivo em sua máquina o exemplo abaixo. 
+exteste: Para começar a praticar, copie para um arquivo em sua máquina o exemplo abaixo. 
 
 <!-- <!DOCTYPE html>
 <html>
@@ -15,10 +15,10 @@ exteste1: Para começar a praticar, copie para um arquivo em sua máquina o exem
   </body>
 </html> -->
 
-scriptexteste1: Agora você! Faça o seguinte: Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito. Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo. Por fim, recupere o subtítulo e altere-o também.
-
-
-Adicione o código abaixo a uma página HTML e adicione uma tag script. Você deverá fazer tudo a seguir usando somente JavaScript.
+scriptexteste1: Agora você! Faça o seguinte: 
+1 - Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito. 
+2 - Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo. 
+3 - Por fim, recupere o subtítulo e altere-o também. Adicione o código abaixo a uma página HTML e adicione uma tag script. Você deverá fazer tudo a seguir usando somente JavaScript.
 
 <!-- <div id="paiDoPai">
   <div id="pai">
@@ -32,6 +32,14 @@ Adicione o código abaixo a uma página HTML e adicione uma tag script. Você de
     <div id="quartoEUltimoFilho"></div>
   </div>
 </div> -->
+
+scriptexteste2: Substitua todas as funções que você usou no exercício anterior por querySelector e/ou querySelectorAll. Além disso, coloque a cor dos retângulos desse link como na cor desta imagem abaixo usando apenas o JavaScript!
+
+exretangulos: Coloque a cor dos retângulos desse link como na cor desta imagem abaixo usando apenas o JavaScript!
+
+expratico: É hora de aplicar seus conhecimentos em manipular os elementos do HTML! A seguir, você verá um trecho de código HTML e CSS.
+Crie um arquivo HTML dentro do diretório exercises/5_1 e copie o código a seguir. Leia as instruções que estão dentro de um comentário na tag script. Não se esqueça de fazer um commit a cada exercício!
+
 
 scriptexteste1: 
 
