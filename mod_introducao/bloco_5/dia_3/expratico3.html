@@ -22,7 +22,7 @@
       <div class="tarefa1">Adicione o botão aqui!</div>
       
       <!-- Tarefa 1 -->
-      <script>
+      <script language="javascript" type="text/javascript">
         let divButton1 = document.querySelector(".tarefa1");
         let button1 = document.createElement("button");
         divButton1.textContent = '';
@@ -48,10 +48,17 @@
         exibir um alerta contendo a mensagem "Desconto de R$(resultado)", sendo
         <strong>discount</strong> o resultado da multiplicação.
       </p>
-      <script language="javascript" type="text/javascript">
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
+
+        <!-- Tarefa 2 -->
+        <script language="javascript" type="text/javascript">
+        let productPrice = 59.99;
+        let discount = 0.3;
+        let result = productPrice * discount;
+        let button2 = document.querySelector(".tarefa2");
+        button2.addEventListener("click", function () {
+          alert("Desconto de R$" + result.toFixed(2) + "!");
+        });
+      </script>
       </script>
       <hr />
       <h2>Bônus</h2>

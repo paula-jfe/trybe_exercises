@@ -218,7 +218,18 @@ Agora que você criou muita coisa, vamos fazer algumas alterações e remoções
 5 - Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde;
 6 - Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
 
+_____________________________________________________________________________________________________________________________________________________________________________________________________
 
+bloco_5/dia_3
 
+ex1: Você tem dois quadrados, com nomes de Caixa 1 e Caixa 2, quando clicar na Caixa 1, a cor da Caixa 2 deve ser trocada para ciano.
+Altere apenas o JavaScript, criando o event listener adequado.
 
+ex2: Novamente dois quadrados, com nomes de Caixa 1 e Caixa 2:
+1 - Ao clicar uma vez na Caixa 1, a cor da Caixa 2 deve ser trocada para azul.
+2 - Ao dar um clique-duplo na Caixa 2, a Caixa 1 deve ser trocada para  - vermelho e a Caixa 2 para amarela.
+Altere apenas o JavaScript, criando o event listener adequado e caso precise, visite o link com todos os elementos.
 
+ex3:
+
+ex4:
