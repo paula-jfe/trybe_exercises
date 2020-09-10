@@ -1,17 +1,12 @@
-function removeElements() {
-    let remove = document.querySelectorAll("div");
-    /* let palavras = [pai, elementoOndeVoceEsta, primeiroFilhoDoFilho]; */
-    for (let i = 0; i < remove.length; i += 1) {
-        let elemento = remove[i];
-        if (elemento.innerHTML.includes("pai") || elemento.innerHTML.includes("elementoOndeVoceEsta") || elemento.innerHTML.includes("primeiroFilhoDoFilho")) {
-            return elemento;
-        } else {
-            return body.removeChild(elemento);
+function deleteAll() {
+    let fatherElement = elemento.parentElement;
+    let exclusion = fatherElement.removeChild();
+    let elements = document.getElementsByTagName("div");
+    for (index = 0; index < elements.length; index += 1) {
+        if (fatherElement != "pai" && exclusion[i] != "elementoOndeVoceEsta" && exclusion[i] != "primeiroFilhoDoFilho") {
+
         }
-        /* for (let j = 0; j < palavras.length; j += 1) {
-            if (remove.innerHTML.includes("palavras[j]")) {
-            } else {
-                body.removeChild(remove[i]);
-            } */
     }
+    console.log(arrayExc);
+
 }
