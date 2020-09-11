@@ -36,34 +36,78 @@
     
     <script>
         window.onload = function() {
-            function backgroundColor(colorBackground) {
-                let content = document.getElementByTagName("body");
+            function setBackgroundColor(colorBackground) {
+                let content = document.getElementsByTagName("body");
                 content.style.backgroundColor = colorBackground;
                 localStorage.setItem("backgroundColorStorage", colorBackground)
             }
-            function textColor(colorText) {
-                let content = document.getElementByTagName("body");
+            function setTextColor(colorText) {
+                let content = document.getElementsByTagName("body");
                 content.style.color = colorText;
                 localStorage.setItem("textColorStorage", colorText)
             }
-            function fontSize(sizeFont) {
-                let content = document.getElementByTagName("body"); 
+            function setFontSize(sizeFont) {
+                let content = document.getElementsByTagName("body"); 
                 content.style.fontSize = sizeFont;
                 localStorage.setItem("fontSizeStorage", sizeFont)
             }
-            function lineHeight(heightLine) {
-                let content = document.getElementByTagName("body");
+            function setLineHeight(heightLine) {
+                let content = document.getElementsByTagName("body");
                 content.style.lineHeight = heightLine;
                 localStorage.setItem("lineHeightStorage", heightLine)
             }
-            function fontFamily(familyFont) {
-                let content = document.getElementByTagName("body");
+            function setFontFamily(familyFont) {
+                let content = document.getElementsByTagName("body");
                 content.style.fontFamily = familyFont;
-                localStorage.setItem("fontFamilyStorage", familyFont)
-
-                
+                localStorage.setItem("fontFamilyStorage", familyFont)   
             }
-        }
+        
+
+        let backgroundColorTextBox = document.querySelector("#backgroungColorText")
+            backgroundColorTextBox.addEventListener("input", function(event) {
+            setBackgroundColor(event.target.innerHTML)
+        })
+
+        let textColorTextBox = document.querySelector("#textColorText")
+            textColorTextBox.addEventListener("input", function(event) {
+            setTextColor(event.target.innerText)
+        })
+
+        let fontSizeTextBox = document.querySelector("#fontSizeText")
+            fontSizeTextBox.addEventListener("input", function(event) {
+            setFontSize(event.target.innerHTML)
+        })
+
+        let fontHeigthTextBox = document.querySelector("#fontHeigthText")
+            fontHeigthTextBox.addEventListener("input", function(event) {
+            setLineHeight(event.target.innerHTML)
+        })
+
+        let fontFamilyTextBox = document.querySelector("#fontFamilyText")
+            fontFamilyTextBox.addEventListener("input", function(event) {
+            setFontFamily(event.target.innerHTML)
+        })
+
+        function start() {
+
+        let backgroundColor = localStorage.getItem("backgroundColorStorage")
+        if (backgroundColor) setBackgroundColor(backgroundColor)
+
+        let fontColor = localStorage.getItem("fontColor")
+        if (fontColor) setTextColor(fontColor)
+
+        let fontSize = localStorage.getItem("fontSize")
+        if (fontSize) setFontSize(fontSize)
+
+        let lineHeight = localStorage.getItem("lineHeight")
+        if (lineHeight) setLineHeight(lineHeight)
+
+        let fontFamily = localStorage.getItem("fontFamily")
+        if (fontFamily) setFontFamily(fontFamily)
+      }
+
+      start()
+    }
 
     </script>
 
@@ -72,41 +116,11 @@
     
     <header class="main-header">
         <h1>Preferências do usuário</h1>
-        <div id="background-color" class="options">
-            <span>Cor de fundo</span>
-            <button>white</button>
-            <button>black</button>
-            <button>green</button>
-            <button>blue</button>
-            <button>yellow</button>
-          </div>
-          <div id="font-color" class="options">
-            <span>Cor da fonte</span>
-            <button>black</button>
-            <button>red</button>
-            <button>white</button>
-          </div>
-          <div id="font-size" class="options">
-            <span>Tamanho da fonte</span>
-            <button>8pt</button>
-            <button>10pt</button>
-            <button>12pt</button>
-            <button>14pt</button>
-            <button>20pt</button>
-          </div>
-          <div id="line-height" class="options">
-            <span>Espaçamento entre as linhas</span>
-            <button>1</button>
-            <button>normal</button>
-            <button>1.5</button>
-            <button>2.0</button>
-            <button>3.0</button>
-          </div>
-          <div id="font-family" class="options">
-            <span>Tipo da fonte</span>
-            <button>Arial</button>
-            <button>Times New Roman</button>
-          </div>
+        <input id="backgroungColorText" type="text" class="text-box" placeholder="Digite a cor de fundo da tela em inglês">
+        <input id="textColorText" type="text" class="text-box" placeholder="Digite a cor do texto em inglês">
+        <input id="fontSizeText" type="text" class="text-box" placeholder="Digite o tamanho da fonte em px">
+        <input id="fontHeigthText" type="text" class="text-box" placeholder="Digite o espaçamento entre as linhas do texto em px">
+        <input id="fontFamilyText" type="text" class="text-box" placeholder="Digite o tipo da fonte">
     </header>
     <main>
         <article class="module">
