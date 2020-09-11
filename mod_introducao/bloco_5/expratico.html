@@ -14,10 +14,6 @@
             margin-left: auto;
         }
 
-        .main-header {
-
-        }
-
         .module {
             display: flex;
             flex-direction: column;
@@ -26,10 +22,19 @@
         }
 
         .list {
-            width: 50%;
+            width: 65%;
             text-align: left;
             margin-right: auto;
             margin-left: auto;
+        }
+
+        .text-box {
+            display: block;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 20px;
+            width: 80%;
         }
 
     </style>
@@ -37,27 +42,27 @@
     <script>
         window.onload = function() {
             function setBackgroundColor(colorBackground) {
-                let content = document.getElementsByTagName("body");
+                let content = document.querySelector("body");
                 content.style.backgroundColor = colorBackground;
                 localStorage.setItem("backgroundColorStorage", colorBackground)
             }
             function setTextColor(colorText) {
-                let content = document.getElementsByTagName("body");
+                let content = document.querySelector("body");
                 content.style.color = colorText;
                 localStorage.setItem("textColorStorage", colorText)
             }
             function setFontSize(sizeFont) {
-                let content = document.getElementsByTagName("body"); 
+                let content = document.querySelector("body"); 
                 content.style.fontSize = sizeFont;
                 localStorage.setItem("fontSizeStorage", sizeFont)
             }
             function setLineHeight(heightLine) {
-                let content = document.getElementsByTagName("body");
+                let content = document.querySelector("body");
                 content.style.lineHeight = heightLine;
                 localStorage.setItem("lineHeightStorage", heightLine)
             }
             function setFontFamily(familyFont) {
-                let content = document.getElementsByTagName("body");
+                let content = document.querySelector("body");
                 content.style.fontFamily = familyFont;
                 localStorage.setItem("fontFamilyStorage", familyFont)   
             }
@@ -65,27 +70,27 @@
 
         let backgroundColorTextBox = document.querySelector("#backgroungColorText")
             backgroundColorTextBox.addEventListener("input", function(event) {
-            setBackgroundColor(event.target.innerHTML)
+            setBackgroundColor(event.target.value);
         })
 
         let textColorTextBox = document.querySelector("#textColorText")
             textColorTextBox.addEventListener("input", function(event) {
-            setTextColor(event.target.innerText)
+            setTextColor(event.target.value)
         })
 
         let fontSizeTextBox = document.querySelector("#fontSizeText")
             fontSizeTextBox.addEventListener("input", function(event) {
-            setFontSize(event.target.innerHTML)
+            setFontSize(event.target.value)
         })
 
         let fontHeigthTextBox = document.querySelector("#fontHeigthText")
             fontHeigthTextBox.addEventListener("input", function(event) {
-            setLineHeight(event.target.innerHTML)
+            setLineHeight(event.target.value)
         })
 
         let fontFamilyTextBox = document.querySelector("#fontFamilyText")
             fontFamilyTextBox.addEventListener("input", function(event) {
-            setFontFamily(event.target.innerHTML)
+            setFontFamily(event.target.value)
         })
 
         function start() {
@@ -105,10 +110,8 @@
         let fontFamily = localStorage.getItem("fontFamily")
         if (fontFamily) setFontFamily(fontFamily)
       }
-
       start()
     }
-
     </script>
 
 </head>
@@ -158,10 +161,10 @@
     </aside>
 
     <ul class = list>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repudiandae mollitia minus consequuntur enim et sunt maxime nesciunt quidem nemo? Sunt facere molestias magnam accusamus voluptates non nam perferendis qui!</li>
-        <li>Ad exercitationem eveniet natus molestiae consequuntur ex ipsum dolorum? Eum harum corrupti incidunt a ad, ratione qui molestias debitis illum alias mollitia tenetur temporibus consectetur sunt nam voluptatibus error at.</li>
-        <li>Eligendi sit aut possimus adipisci esse molestias. Nesciunt itaque fugiat fugit enim. Laboriosam vero porro incidunt a dignissimos quis perferendis debitis, eos odio qui voluptate deleniti fuga. Sint, voluptate laborum?</li>
-        <li>Debitis fugit quidem ea alias quae et, quas at architecto, laboriosam assumenda iste beatae nemo ex id quis possimus recusandae blanditiis pariatur, neque perferendis veniam mollitia minus cupiditate aut? Cum.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Ad exercitationem eveniet natus molestiae consequuntur ex ipsum dolorum?</li>
+        <li>Eligendi sit aut possimus adipisci esse molestias.</li>
+        <li>Debitis fugit quidem ea alias quae et, quas at architecto.</li>
     </ul>
     <div class="module">
         <h3>Lorem ipsum dolor sit amet.</h3>
@@ -180,7 +183,3 @@
 
 </body>
 </html>
-
-
-
-
