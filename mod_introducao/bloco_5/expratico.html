@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        body {
+            text-align: center;
+            width: 60%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .main-header {
+
+        }
+
+        .module {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 15px;
+        }
+
+        .list {
+            width: 50%;
+            text-align: left;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+    </style>
+    
+    <script>
+        window.onload = function() {
+            function backgroundColor(colorBackground) {
+                let content = document.getElementByTagName("body");
+                content.style.backgroundColor = colorBackground;
+                localStorage.setItem("backgroundColorStorage", colorBackground)
+            }
+            function textColor(colorText) {
+                let content = document.getElementByTagName("body");
+                content.style.color = colorText;
+                localStorage.setItem("textColorStorage", colorText)
+            }
+            function fontSize(sizeFont) {
+                let content = document.getElementByTagName("body"); 
+                content.style.fontSize = sizeFont;
+                localStorage.setItem("fontSizeStorage", sizeFont)
+            }
+            function lineHeight(heightLine) {
+                let content = document.getElementByTagName("body");
+                content.style.lineHeight = heightLine;
+                localStorage.setItem("lineHeightStorage", heightLine)
+            }
+            function fontFamily(familyFont) {
+                let content = document.getElementByTagName("body");
+                content.style.fontFamily = familyFont;
+                localStorage.setItem("fontFamilyStorage", familyFont)
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <header class="main-header">
+        <h1>Preferências do usuário</h1>
+        <div id="background-color" class="options">
+            <span>Cor de fundo</span>
+            <button>white</button>
+            <button>black</button>
+            <button>green</button>
+            <button>blue</button>
+            <button>yellow</button>
+          </div>
+          <div id="font-color" class="options">
+            <span>Cor da fonte</span>
+            <button>black</button>
+            <button>red</button>
+            <button>white</button>
+          </div>
+          <div id="font-size" class="options">
+            <span>Tamanho da fonte</span>
+            <button>8pt</button>
+            <button>10pt</button>
+            <button>12pt</button>
+            <button>14pt</button>
+            <button>20pt</button>
+          </div>
+          <div id="line-height" class="options">
+            <span>Espaçamento entre as linhas</span>
+            <button>1</button>
+            <button>normal</button>
+            <button>1.5</button>
+            <button>2.0</button>
+            <button>3.0</button>
+          </div>
+          <div id="font-family" class="options">
+            <span>Tipo da fonte</span>
+            <button>Arial</button>
+            <button>Times New Roman</button>
+          </div>
+    </header>
+    <main>
+        <article class="module">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ullam!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ab unde tempora cupiditate odio temporibus quibusdam nisi aliquam quisquam distinctio repellat hic deleniti praesentium eaque, ipsam velit, error non ex!</p>
+            <p>Deleniti aspernatur nesciunt commodi rem natus? Tempore optio quae quia vel accusamus repellendus libero autem, consectetur, voluptatibus, cumque recusandae laboriosam! Nostrum voluptas quisquam aperiam aspernatur culpa perferendis, nobis nesciunt odio!</p>
+            <p>Est fugit eveniet obcaecati sapiente quos, qui assumenda possimus dignissimos facere quidem, eligendi pariatur? Temporibus, ex tempora illo minima, id perferendis laudantium distinctio obcaecati ratione mollitia sit provident perspiciatis natus.</p>
+        </article>
+        <article class="module">
+            <h2>Non inventore excepturi laboriosam facere nesciunt atque voluptate, dolor officia.</h2>
+            <p>Qui sunt tempore numquam natus cum. Accusantium facere tempore quibusdam illum, laborum voluptate nostrum libero, saepe dicta labore sunt ea provident harum. Animi at, doloribus repellendus error iste nulla cupiditate?</p>
+            <p>Laudantium ex placeat, expedita sunt molestias facere tempore tenetur saepe consectetur voluptas id maxime dolores, ea aliquid unde! Voluptates fugiat in amet ipsa dolorem ex error et laborum corrupti quaerat?</p>
+            <p>Quisquam aut sint recusandae tenetur quasi quod error! Amet distinctio minus expedita nesciunt veritatis libero, molestiae porro eveniet, recusandae similique illum. Incidunt illum, qui provident at sit laudantium harum alias?</p>
+        </article>
+        <article class="module">
+            <h2>Nihil officiis mollitia non, consequatur enim sed voluptatum repudiandae. Officiis!</h2>
+            <p>Vitae quod facilis quae impedit reprehenderit quisquam, explicabo veritatis odio dicta libero molestiae? Debitis, iure temporibus dolore enim obcaecati aliquid consequuntur hic fugiat nostrum perspiciatis similique natus consequatur dolor ad?</p>
+            <p>A iste repudiandae consectetur voluptatibus eveniet praesentium expedita, asperiores quis tempora corrupti error sed animi molestiae cumque veniam fugiat recusandae nostrum aliquid quasi eum tenetur natus reprehenderit, repellendus maxime. Placeat!</p>
+            <p>Ad, perferendis repellendus fuga possimus, inventore id iusto repudiandae magnam, laborum officiis quos iste eaque ipsam dolorum consectetur! Maiores nam soluta fugit laudantium adipisci! Amet dicta cupiditate aperiam necessitatibus laboriosam?</p>
+        </article>
+    </main>
+    <aside>
+        <div class="module">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem aliquid minima, nisi accusamus corrupti facere.
+            <h3>Lorem ipsum dolor sit.</h3>
+        </div>
+        <div class="module">
+            Ipsa, reiciendis. Impedit eum reiciendis ab, mollitia officia quidem consequatur, dolor in, assumenda optio quisquam.
+            <h3>Maxime ratione natus voluptates?</h3>
+        </div>
+        <div class="module">
+            Autem omnis nesciunt aliquid assumenda? Maxime, quibusdam maiores. Veritatis, dolor voluptate distinctio animi veniam vero!
+            <h3>Vero iste suscipit accusantium!</h3>
+        </div>
+    </aside>
+
+    <ul class = list>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repudiandae mollitia minus consequuntur enim et sunt maxime nesciunt quidem nemo? Sunt facere molestias magnam accusamus voluptates non nam perferendis qui!</li>
+        <li>Ad exercitationem eveniet natus molestiae consequuntur ex ipsum dolorum? Eum harum corrupti incidunt a ad, ratione qui molestias debitis illum alias mollitia tenetur temporibus consectetur sunt nam voluptatibus error at.</li>
+        <li>Eligendi sit aut possimus adipisci esse molestias. Nesciunt itaque fugiat fugit enim. Laboriosam vero porro incidunt a dignissimos quis perferendis debitis, eos odio qui voluptate deleniti fuga. Sint, voluptate laborum?</li>
+        <li>Debitis fugit quidem ea alias quae et, quas at architecto, laboriosam assumenda iste beatae nemo ex id quis possimus recusandae blanditiis pariatur, neque perferendis veniam mollitia minus cupiditate aut? Cum.</li>
+    </ul>
+    <div class="module">
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas iusto possimus voluptatum numquam magni nihil nulla fuga quod ab tenetur!</p>
+    </div>
+    <div class="module">
+        <h3>Ipsam rem aliquam odio iste.</h3>
+        <p>Molestiae, delectus in? Dolore porro quae inventore accusamus accusantium saepe harum, veniam quia consequatur nobis, fuga sunt, possimus id voluptas.</p>
+    </div>
+    <div class="module">
+        <h3>Pariatur aut rerum placeat. Numquam!</h3>
+        <p>Provident iure accusamus voluptates optio temporibus voluptas, eius maiores ex inventore molestiae fuga ipsam dolorum cupiditate, nulla porro nisi aperiam.</p>
+    </div>
+
+    <!-- https://css-tricks.com/need-lorem-ipsum-inside-html/ conteúdo todo gerado com lorem ipsum -->
+
+</body>
+</html>
+
+
+
+
