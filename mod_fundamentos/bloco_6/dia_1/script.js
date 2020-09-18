@@ -5,9 +5,6 @@ window.onload = function () {
     let states = ["--", "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO" ];
     let selectStates = document.querySelector("#state");
     let resumeSummary = document.querySelector("#consoleLogForm");
-/*     let firstBlock = document.querySelector("#step1");
-    let secondBlock = document.querySelector("#step2");
-    let thirdBlock = document.querySelector("#step3"); */
     let getName = document.querySelector("#fullName");
     let getEmail = document.querySelector("#email");
     let getCpf = document.querySelector("#cpfdata");
@@ -21,11 +18,8 @@ window.onload = function () {
     let getJobDescription = document.querySelector("#jobDescription");
     let getStartDate = document.querySelector("#startDate");
     
-    dateText.addEventListener("input", validateDate);
     stopDefault.addEventListener("click", summaryAll);
     clearButton.addEventListener("click", clearFunction);
-
-
 
     function validateDate() {
         let dateTextString = dateText.value;
@@ -74,41 +68,54 @@ window.onload = function () {
         }
     }
 
-    function summaryAll() {
-        preventDefault();
-    }
-
-    function preventDefault() {
+    function summaryAll(event) {
+        event.preventDefault();
         let createElementSummary = document.createElement("p");
+        console.log(getCond.checked);
+        console.log(getHouse.checked);
+        setNameValue = getName.value;
+        setEmailValue = getEmail.value;
+        setCpfValue = getCpf.value;
+        setAddressValue = getAddress.value;
+        setCityValue = getCity.value;
+        setStateValue = getState.value;
+        setResumeValue = getResume.value;
+        setPositionValue = getPosition.value;
+        setDescriptionValue = getJobDescription.value;
+        setDateValue = getStartDate.value;
+
         if (getHouse.checked == true) {
-            "Nome: " + getName.value + "<br>"
-            "Email: " + getEmail.value + "<br>"
-            "CPF: " + getCpf.value + "<br>"
-            "Endereço: " + getAddress.value + "<br>"
-            "Cidade: " + getCity.value + "<br>"
-            "Estado: " + getState.value + "<br>"
-            "Casa" +  "<br>"
-            "Currículo: " + getResume.value + "<br>"
-            "Cargo: " + getPosition.value + "<br>"
-            "Descrição do cargo: " + getJobDescription.value + "<br>"
-            "Data de início: " + getStartDate.value + "<br>";
+            createElementSummary.innerHTML = 
+            "Nome: " + setNameValue + "<br>" +
+            "Email: " + setEmailValue + "<br>" +
+            "CPF: " + setCpfValue + "<br>" +
+            "Endereço: " + setAddressValue + "<br>" +
+            "Cidade: " + setCityValue + "<br>" +
+            "Estado: " + setStateValue + "<br>" +
+            "Casa" +  "<br>" +
+            "Currículo: " + setResumeValue + "<br>" +
+            "Cargo: " + setPositionValue + "<br>" +
+            "Descrição do cargo: " + setDescriptionValue + "<br>" +
+            "Data de início: " + setDateValue + "<br>"; 
             resumeSummary.appendChild(createElementSummary);
             console.log(resumeSummary);
-        } else if (getCond.checked == true) {
-            createElementSummary.innerText = 
-            "Nome: " + getName.value + "<br>"
-            "Email: " + getEmail.value + "<br>"
-            "CPF: " + getCpf.value + "<br>"
-            "Endereço: " + getAddress.value + "<br>"
-            "Cidade: " + getCity.value + "<br>"
-            "Estado: " + getState.value + "<br>"
-            "Apartamento" +  "<br>"
-            "Currículo: " + getResume.value + "<br>"
-            "Cargo: " + getPosition.value + "<br>"
-            "Descrição do cargo: " + getJobDescription.value + "<br>"
-            "Data de início: " + getStartDate.value + "<br>";
+            validateDate();
+        } else if (getHouse.checked == false) {
+            createElementSummary.innerHTML = 
+            "Nome: " + setNameValue + "<br>" +
+            "Email: " + setEmailValue + "<br>" +
+            "CPF: " + setCpfValue + "<br>" +
+            "Endereço: " + setAddressValue + "<br>" +
+            "Cidade: " + setCityValue + "<br>" +
+            "Estado: " + setStateValue + "<br>" +
+            "Casa" +  "<br>" +
+            "Currículo: " + setResumeValue + "<br>" +
+            "Cargo: " + setPositionValue + "<br>" +
+            "Descrição do cargo: " + setDescriptionValue + "<br>" +
+            "Data de início: " + setDateValue + "<br>";
             resumeSummary.appendChild(createElementSummary);
-            console.log(resumeSummary);
+            console.log(getHouse.checked);
+            validateDate();
         }
     }
 }
