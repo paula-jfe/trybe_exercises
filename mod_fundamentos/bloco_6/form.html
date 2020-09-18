@@ -8,43 +8,63 @@
     <script src="script.js" type="text/javascript"></script>
 </head>
 <body>
-    <form>
+    <header id="firstForm">
+        <h1>Meu Primeiro Formulário</h1>
+    </header>
+    <form action="" method="GET" class="newform">
         <fieldset id="step1">
-            <label for="fullName">Nome:</label>
-            <input id="fullName" type="text" maxlength="40" required="required">
-            <label for="email">Email:</label>
-            <input id="email" type="text" maxlength="50" required="required">
-            <label for="cpfdata">CPF:</label>
-            <input id="cpfdata" type="text" maxlength="11" required="required">
-            <label for="adress">Endereço:</label>
-            <input id="adress" type="text" maxlength="200" required="required">
-            <label for="city">Cidade:</label>
-            <input id="city" type="text" maxlength="28" required="required">
-            <label for="state">Estado:</label>
-            <select id="state" required="required"></select>
+
+            <label for="fullName">Nome:
+            <input id="fullName" type="text" maxlength="40" required="required" name="name">
+            </label>
+
+            <label for="email">Email:
+            <input id="email" type="text" maxlength="50" required="required" name="email">
+            </label>
+
+            <label for="cpfdata">CPF:
+            <input id="cpfdata" type="text" maxlength="11" required="required" name="cpf">
+            </label>
+
+            <label for="address">Endereço:
+            <input id="address" type="text" maxlength="200" required="required" name="endereço">
+            </label>
+
+            <label for="city">Cidade:
+            <input id="city" type="text" maxlength="28" required="required" name="cidade">
+            </label>
+
+            <label for="state">Estado:
+            <select id="state" required="required" name="estado"></select>
+            </label>
+
+            <label for="house">Casa
             <input id="house" type="radio" name="residence" required="required">
-            <label for="house">Casa</label>
+            <div class="checkmark"></div>
+            </label>
+
+            <label for="condominium">Apartamento
             <input id="condominium" type="radio" name="residence">
-            <label for="condominium">Apartamento</label>
+            <div class="checkmark"></div>
+            </label>
+
         </fieldset>
         <fieldset id="step2">
             <label for="resume">Currículo:</label>
-            <textarea id="resume" maxlength="1000" required="required"></textarea>
+            <textarea id="resume" maxlength="1000" required="required" name="curriculo"></textarea>
             <label for="position">Cargo:</label>
-            <input id="position" type="text" maxlength="40" required="required">
+            <input id="position" type="text" maxlength="40" required="required" name="cargo">
             <label for="jobDescription">Descrição do cargo:</label>
-            <input id="jobDescription" type="text" maxlength="500" required="required">
+            <input id="jobDescription" type="text" maxlength="500" required="required" name="descricao">
             <label for="startDate">Data de início:</label>
-            <input id="startDate" type="text" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" required="required">
+            <input id="startDate" type="text" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" required="required" name="data">
         <!-- Por que não podemos usar input type="date"? -->
         </fieldset>
         <fieldset id="step3">
-            <button id="stopButton">Interromper fluxo automático</button>
+            <button id="stopButton">Submit</button>
             <div id="consoleLogForm"></div>
-            <button id="cleanAll">Limpar dados do formulário</button>
+            <button id="clearAll">Limpar dados do formulário</button>
         </fieldset>
-
-
     </form>
 </body>
 </html>
