@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- creating the squares and columns divs -->
+<div id="stack">
+	<div class="column_left"> 
+		<div>
+        	<div>	
+			</div>
+    	</div>
+    	<div>
+        	<div></div>
+    	</div>
+ 	</div>
+ 	<div class="column_right">
+    	<div>
+        	<div>	
+			</div>
+    	</div>
+    	<div>
+        	<div>
+			</div>
+    	</div>
+  	</div>
+</div>
+<style>
+
+#stack{
+	height:20rem;
+	width:20rem;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:center;
+	border: solid black 4px;
+}
+
+.column_left, .column_right{
+	
+    height:18rem;
+	width:8rem;
+    margin:auto;
+	display:flex;
+	flex-direction:column;
+    justify-content:space-evenly;
+    border: solid black 4px;
+    }
+    
+.column_left > div, .column_right > div {
+	height:5rem;
+	width:5rem ;
+	display:flex;
+	align-items:center;
+    justify-content:center;
+    margin:auto;
+    border: solid black 4px;
+}  
+
+div > div > div > div {
+    height:2.5rem;
+	width:2.5rem; 
+    border: solid black 4px;
+}
+
+</style>
+
+<script>
+
+//Criando o quadrado vermelho de fundo
+let stack = document.getElementById("stack")
+stack.style.backgroundColor = "red";
+
+//Colunas por getElementsByClassName
+let columnLeft = document.getElementsByClassName("column_left")[0]
+columnLeft.style.backgroundColor = "blue";
+
+let columnRight = document.getElementsByClassName("column_right")[0]
+columnRight.style.backgroundColor = "green";
+
+//Todos os mini quadrados de baixo
+document.querySelectorAll("div>div>div>div").forEach((downSquares) => {
+	downSquares.style.backgroundColor = "orange"
+})
+
+//Todos os mini quadrados de cima
+document.querySelectorAll("#stack > div").forEach((i) => {
+    let upSquares = document.querySelector("." + i.className + "> div > div ")
+	upSquares.style.backgroundColor = "pink";
+})
+
+//Quadrados violetas e roxos querySelectorAll 
+function quadradosInternos(lado, cor) {
+    document.querySelectorAll(lado + "> div").forEach((i) => {
+	i.style.backgroundColor = "" + cor;
+})}
+
+quadradosInternos(".column_left", "violet");
+quadradosInternos(".column_right", "purple");
+
+</script>
+
+</body>
+</html>
