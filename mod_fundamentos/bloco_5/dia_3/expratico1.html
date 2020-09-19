@@ -1,4 +1,3 @@
-<!-- Start with this webpage, which has several input elements and a button: -->
 <!DOCTYPE html>
 <html>
  <head>
@@ -20,19 +19,17 @@
  <div id="story"></div>
 
  <script>
- function libIt() {
-    var storyDiv = document.getElementById("story");
-    var person = document.getElementById("person").value;
-    var adjective = document.getElementById("adjective").value;
-    var noun = document.getElementById("noun").value;
-    storyDiv.innerHTML = person + " married a " + adjective + " " + noun + "... So weird!";
-  }
+  let story = document.querySelector("#story");
+  let character = document.querySelector("#person");
+  let storyNoun= document.querySelector("#noun");
+  let characteristic = document.querySelector("#adjective");
+  let generateStory = document.querySelector("#lib-button");
   
-  var libButton = document.getElementById('lib-button');
-  libButton.addEventListener('click', libIt);
+  generateStory.addEventListener("click", makeMadLib);
+
+  function makeMadLib() {
+    story.innerText = character.value + " likes " + storyNoun.value + " because they're " + characteristic.value + " than anything!";
+  }
 </script>
  </body>
 </html>
-<!-- Add a script tag to the bottom of the page for your code.
-Add an event listener to the button so that it calls a makeMadLib function when clicked.
-In the makeMadLib function, retrieve the current values of the form input elements, make a story from them, and output that in the story div (like "Pamela really likes pink cucumbers.") -->
