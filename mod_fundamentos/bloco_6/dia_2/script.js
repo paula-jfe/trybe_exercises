@@ -1,6 +1,6 @@
 window.onload = function () {
     let dateText = document.querySelector("#startDate");
-    let stopDefault = document.querySelector("#stopButton");
+    let sendForm = document.querySelector("#sendButton");
     let clearButton = document.querySelector("#clearAll");
     let states = ["--", "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO" ];
     let selectStates = document.querySelector("#state");
@@ -18,7 +18,7 @@ window.onload = function () {
     let getJobDescription = document.querySelector("#jobDescription");
     let getStartDate = document.querySelector("#startDate");
     
-    stopDefault.addEventListener("click", summaryAll);
+    sendForm.addEventListener("click", summaryAll);
     clearButton.addEventListener("click", clearFunction);
 
     function validateDate() {
@@ -73,16 +73,16 @@ window.onload = function () {
         let createElementSummary = document.createElement("p");
         console.log(getCond.checked);
         console.log(getHouse.checked);
-        setNameValue = getName.value;
-        setEmailValue = getEmail.value;
-        setCpfValue = getCpf.value;
-        setAddressValue = getAddress.value;
-        setCityValue = getCity.value;
-        setStateValue = getState.value;
-        setResumeValue = getResume.value;
-        setPositionValue = getPosition.value;
-        setDescriptionValue = getJobDescription.value;
-        setDateValue = getStartDate.value;
+        let setNameValue = getName.value;
+        let setEmailValue = getEmail.value;
+        let setCpfValue = getCpf.value;
+        let setAddressValue = getAddress.value;
+        let setCityValue = getCity.value;
+        let setStateValue = getState.value;
+        let setResumeValue = getResume.value;
+        let setPositionValue = getPosition.value;
+        let setDescriptionValue = getJobDescription.value;
+        let setDateValue = getStartDate.value;
 
         if (getHouse.checked == true) {
             createElementSummary.innerHTML = 
