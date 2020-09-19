@@ -36,23 +36,34 @@
   <br><br>
   <div id="solution"></div>
 
+  <label>Bônus:
+    <input type="number" id="bonus-input" size="2">
+  </label>
+  <button id="bonus-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
   <script>
     setSquareNumber = document.querySelector("#square-input");
     setHalfNumber = document.querySelector("#half-input");
     setFractionNumber = document.querySelector("#percent1-input");
     setWholeNumber = document.querySelector("#percent2-input");
     setCircleArea = document.querySelector("#area-input");
+    setBonus = document.querySelector("#bonus-input");
+    getSolution = document.querySelector("#solution");
 
     squareNumberButton = document.querySelector("#square-button");
     HalfNumberButton = document.querySelector("#half-button");
     percentNumberButton = document.querySelector("#percent-button");
     circleAreaButton = document.querySelector("#area-button");
+    bonusButton = document.querySelector("#bonus-button");
 
     /* 
     squareNumberButton.addEventListener("click", squareNumber);
     HalfNumberButton.addEventListener("click", halfNumber);
     percentNumberButton.addEventListener("click", percentOf);
     circleAreaButton.addEventListener("click", areaOfCircle); 
+    setBonus.addEventListener("click", bonusFunction);
     */
 
     /* let timeout = null; */
@@ -60,12 +71,14 @@
     setHalfNumber.addEventListener("keyup", halfNumber);
     setWholeNumber.addEventListener("keyup", percentOfKey);
     setCircleArea.addEventListener("keyup", areaOfCircle);
+    setBonus.addEventListener("keyup", bonusFunction);
     /* https://schier.co/blog/wait-for-user-to-stop-typing-using-javascript */
 
     function squareNumber() {
       setTimeout(function() {
         let getSquareNumber = setSquareNumber.value * setSquareNumber.value;
         console.log("The result of squaring the number " + setSquareNumber.value + " is " + getSquareNumber + ".");
+        getSolution.innerHTML = getSquareNumber;
       }, 1000);
     }
 
@@ -73,6 +86,7 @@
       setTimeout(function() {
         let getHalfNumber = setHalfNumber.value / 2;
         console.log("Half of " + setHalfNumber.value + " is " + getHalfNumber + ".");
+        getSolution.innerHTML = getHalfNumber;
       }, 1000);
     }
 
@@ -82,6 +96,7 @@
         let number2 = setWholeNumber.value;
         let percentOfNumber = (number1 / number2) * 100;
         console.log(number1 + " is " + percentOfNumber + "% of " + number2 + ".");
+        getSolution.innerHTML = percentOfNumber;
       }, 1000);
     }
 
@@ -92,6 +107,7 @@
         let areaRounded = Math.round((areaCalc + Number.EPSILON) * 100) / 100;
       /* https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary */
         console.log("The area for a circle with radius " + radiusNumber + " is " + areaRounded + ".");
+        getSolution.innerHTML = areaRounded;
       }, 1000);
     }
 
@@ -102,7 +118,20 @@
         if (number1 >= 0 && number2 > 0) {
           let percentOfNumber = (number1 / number2) * 100;
           console.log(number1 + " is " + percentOfNumber + "% of " + number2 + ".");
+          getSolution.innerHTML = percentOfNumber;
         }
+      }, 1000);
+    }
+
+    function bonusFunction() {
+      setTimeout(function() {
+      let op1 = setBonus.value / 2;
+      let op2 = op1 * op1;
+      let op3 = Math.PI * (op2 * op2);
+      let op4 = (op2 / op3) * 100;
+      let op4R = Math.round((op4 + Number.EPSILON) * 100) / 100;
+      getSolution.innerHTML = op4R;
+      console.log(op2 + " is " + op4R + "% of " + op3 + ".");
       }, 1000);
     }
   </script>
