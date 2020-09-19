@@ -1,4 +1,3 @@
-<!-- Start with this webpage, which has inputs and buttons for things to calculate: -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +36,76 @@
   <br><br>
   <div id="solution"></div>
 
-<script>
+  <script>
+    setSquareNumber = document.querySelector("#square-input");
+    setHalfNumber = document.querySelector("#half-input");
+    setFractionNumber = document.querySelector("#percent1-input");
+    setWholeNumber = document.querySelector("#percent2-input");
+    setCircleArea = document.querySelector("#area-input");
 
-</script>
+    squareNumberButton = document.querySelector("#square-button");
+    HalfNumberButton = document.querySelector("#half-button");
+    percentNumberButton = document.querySelector("#percent-button");
+    circleAreaButton = document.querySelector("#area-button");
+
+    /* 
+    squareNumberButton.addEventListener("click", squareNumber);
+    HalfNumberButton.addEventListener("click", halfNumber);
+    percentNumberButton.addEventListener("click", percentOf);
+    circleAreaButton.addEventListener("click", areaOfCircle); 
+    */
+
+    /* let timeout = null; */
+    setSquareNumber.addEventListener("keyup", squareNumber);
+    setHalfNumber.addEventListener("keyup", halfNumber);
+    setWholeNumber.addEventListener("keyup", percentOfKey);
+    setCircleArea.addEventListener("keyup", areaOfCircle);
+    /* https://schier.co/blog/wait-for-user-to-stop-typing-using-javascript */
+
+    function squareNumber() {
+      setTimeout(function() {
+        let getSquareNumber = setSquareNumber.value * setSquareNumber.value;
+        console.log("The result of squaring the number " + setSquareNumber.value + " is " + getSquareNumber + ".");
+      }, 1000);
+    }
+
+    function halfNumber() {
+      setTimeout(function() {
+        let getHalfNumber = setHalfNumber.value / 2;
+        console.log("Half of " + setHalfNumber.value + " is " + getHalfNumber + ".");
+      }, 1000);
+    }
+
+    function percentOf() {
+      setTimeout(function() {
+        let number1 = setFractionNumber.value;
+        let number2 = setWholeNumber.value;
+        let percentOfNumber = (number1 / number2) * 100;
+        console.log(number1 + " is " + percentOfNumber + "% of " + number2 + ".");
+      }, 1000);
+    }
+
+    function areaOfCircle() {
+      setTimeout(function() {
+        let radiusNumber = setCircleArea.value;
+        let areaCalc = Math.PI * (radiusNumber * radiusNumber);
+        let areaRounded = Math.round((areaCalc + Number.EPSILON) * 100) / 100;
+      /* https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary */
+        console.log("The area for a circle with radius " + radiusNumber + " is " + areaRounded + ".");
+      }, 1000);
+    }
+
+    function percentOfKey() {
+      setTimeout(function() {
+      let number1 = setFractionNumber.value;
+      let number2 = setWholeNumber.value;
+        if (number1 >= 0 && number2 > 0) {
+          let percentOfNumber = (number1 / number2) * 100;
+          console.log(number1 + " is " + percentOfNumber + "% of " + number2 + ".");
+        }
+      }, 1000);
+    }
+  </script>
+
 </body>
 </html>
-<!-- Add a script tag, and add the functions from the calculator exercise (view the solution if you haven't done it yet).
-For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
-Bonus: respond to key presses so that the user doesn't have to click the button. -->
