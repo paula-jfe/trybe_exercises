@@ -1,24 +1,30 @@
-/* function removeThem() {
-    let tagsDiv = document.querySelector("div");
-    let tagsDivAll = document.querySelectorAll("div");
-    let father = document.getElementById("paiDoPai");
-    let tag1 = document.getElementById("pai");
-    let tag2 = document.getElementById("elementoOndeVoceEsta");
-    let tag3 = document.getElementById("primeiroFilhoDoFilho");
-    let childrenFather = father.children;
+window.onload = function () {
 
-    let divComeco = document.getElementById("segundoEUltimoFilhoDoFilho");
-    for (index = 0; index < tagsDivAll.length; index += 1) {
-        if (divComeco != tag1 || divComeco != tag2 || divComeco != tag3) {
-            divComeco.parentNode.removeChild(divComeco);
-        } else {
-            divComeco = divComeco.parentNode;
+    let tag1 = document.querySelector("#pai");
+    let tag2 = document.querySelector("#elementoOndeVoceEsta");
+    let tag3 = document.querySelector("#primeiroFilhoDoFilho");    
+
+    div1grau();
+    function div1grau() {
+        let tag1Children = tag1.children;
+        for (index = 0; index < tag1.children.length; index += 1) {
+            if (tag1Children[index].id !== tag2.id) {
+                tag1.removeChild(tag1Children[index]);
+            } if (tag1.lastElementChild.id !== tag2.id) {
+                tag1.removeChild(tag1.lastElementChild);
+            }
         }
     }
- */
 
-document.querySelectorAll("div#paiDoPai div");
-
-
-
-
+    div2grau();
+    function div2grau() {
+        let tag2Children = tag1.children;
+        for (index = 0; index < tag1.children.length; index += 1) {
+            if (tag2Children[index].id !== tag3.id) {
+                tag2.removeChild(tag2Children[index]);
+            } if (tag2.lastElementChild.id !== tag3.id) {
+                tag2.removeChild(tag2.lastElementChild);
+            }
+        }
+    }
+}
