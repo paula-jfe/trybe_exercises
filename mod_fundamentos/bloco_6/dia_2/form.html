@@ -26,59 +26,89 @@
             </div>
         </div>
         
-        <fieldset id="step1">
+        <div class="field">
+            <label class="label" for="email">Email:</label>
+            <div class="control">
+                <input class="input" id="email" type="text" maxlength="50" required="required" name="email">
+            </div>
+        </div>
 
-            
-            
-            
+        <div class="field">
+            <label class="label" for="cpfdata">CPF:</label>
+            <div class="control">
+                <input class="input" id="cpfdata" type="text" maxlength="11" required="required" name="cpf">
+            </div>
+        </div>
 
-            <label for="email">Email:
-            <input id="email" type="text" maxlength="50" required="required" name="email">
-            </label>
+        <div class="field">
+            <label class="label" for="address">Endereço:</label>
+            <div class="control">
+                <input class="input" id="address" type="text" maxlength="200" required="required" name="endereço">
+            </div>
+        </div>
 
-            <label for="cpfdata">CPF:
-            <input id="cpfdata" type="text" maxlength="11" required="required" name="cpf">
-            </label>
+        <div class="field">
+            <label class="label" for="city">Cidade:</label>
+            <div class="control">
+                <input class="input" id="city" type="text" maxlength="28" required="required" name="cidade">
+            </div>
+        </div>
 
-            <label for="address">Endereço:
-            <input id="address" type="text" maxlength="200" required="required" name="endereço">
-            </label>
+        <div class="field">
+            <label class="label" for="state">Estado:</label>
+            <div class="select">
+                <select class="input" id="state" required="required" name="estado"></select>
+            </div>
+        </div>
 
-            <label for="city">Cidade:
-            <input id="city" type="text" maxlength="28" required="required" name="cidade">
-            </label>
+        <div class="field">
+            <div class="control"></div>
+                <label class="radio" for="house">
+                    <input type="radio" id="house" name="residence" required="required">
+                    Casa
+                </label>
+                <br>
+                <label class="radio" for="condominium">
+                    <input type="radio" id="condominium" name="residence">
+                    Apartamento
+                </label>
+            </div>
+        </div>
 
-            <label for="state">Estado:
-            <select id="state" required="required" name="estado"></select>
-            </label>
+        <div class="field">
+            <label class="label" for="resume">Currículo:</label>
+            <div class="control">
+                <textarea class="textarea" id="resume" maxlength="1000" required="required" name="curriculo"></textarea>
+            </div>
+        </div>
 
-            <label for="house">Casa
-            <input id="house" type="radio" name="residence" required="required">
-            <div class="checkmark"></div>
-            </label>
+        <div class="field">
+            <label class="label" for="position">Cargo:</label>
+            <div class="control">
+                <input class="input" id="position" type="text" maxlength="40" required="required" name="cargo">
+            </div>
+        </div>
 
-            <label for="condominium">Apartamento
-            <input id="condominium" type="radio" name="residence">
-            <div class="checkmark"></div>
-            </label>
+        <div class="field">
+            <label class="label" for="jobDescription">Descrição do cargo:</label>
+            <div class="control">
+                <input class="input" id="jobDescription" type="text" maxlength="500" required="required" name="descricao">
+            </div>
+        </div>
 
-        </fieldset>
-        <fieldset id="step2">
-            <label for="resume">Currículo:</label>
-            <textarea id="resume" maxlength="1000" required="required" name="curriculo"></textarea>
-            <label for="position">Cargo:</label>
-            <input id="position" type="text" maxlength="40" required="required" name="cargo">
-            <label for="jobDescription">Descrição do cargo:</label>
-            <input id="jobDescription" type="text" maxlength="500" required="required" name="descricao">
-            <label for="startDate">Data de início:</label>
-            <input id="startDate" type="text" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" required="required" name="data">
+        <div class="field">
+            <label class="label" for="startDate">Data de início:</label>
+            <div class="control">
+                <input class="startDate" type="text" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" required="required" name="data">
+            </div>
+        </div>
+                       
         <!-- Por que não podemos usar input type="date"? -->
-        </fieldset>
-        <fieldset id="step3">
+
             <button id="stopButton">Submit</button>
             <div id="consoleLogForm"></div>
             <button id="clearAll">Limpar dados do formulário</button>
-        </fieldset>
+
     </form>
 </body>
 </html>
