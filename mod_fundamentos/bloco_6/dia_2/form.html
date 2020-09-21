@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My First Form</title>
     <link href="css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+    <script src="dist/js/DatePickerX.min.js"></script>
+    <script src="js/just-validate.min.js"></script>
     <script src="script.js" type="text/javascript"></script>
+    <style>
+        .section {
+            width: 100%;
+            margin: 0 auto;
+            background-color: azure;
+        }
+
+        .newform {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+    </style>
+
 </head>
+
 <body>
     <section class="section">
         <div class="container">
@@ -14,96 +33,98 @@
                 <h1 class="title has-text-centered">Meu Primeiro Formulário</h1>
             </header>
         </div>
-    </section>    
+    </section>
 
     <section class="section">
         <div class="container">
-            <form action="" method="GET">
+            <form class="newform" action="" method="GET">
 
                 <div class="field">
                     <label class="label" for="fullName">Nome:</label>
                     <div class="control">
-                        <input class="input" id="fullName" type="text" maxlength="40" required="required" name="name">
+                        <input class="input" id="fullName" type="text" name="name" data-validate-field="name">
                     </div>
                 </div>
-                
+
                 <div class="field">
                     <label class="label" for="email">Email:</label>
                     <div class="control">
-                        <input class="input" id="email" type="text" maxlength="50" required="required" name="email">
+                        <input class="input" id="email" type="text" name="email" data-validate-field="email">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="cpfdata">CPF:</label>
                     <div class="control">
-                        <input class="input" id="cpfdata" type="text" maxlength="11" required="required" name="cpf">
+                        <input class="input" id="cpfdata" type="text" name="cpf" data-validate-field="cpf">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="address">Endereço:</label>
                     <div class="control">
-                        <input class="input" id="address" type="text" maxlength="200" required="required" name="endereço">
+                        <input class="input" id="address" type="text" name="address" data-validate-field="address">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="city">Cidade:</label>
                     <div class="control">
-                        <input class="input" id="city" type="text" maxlength="28" required="required" name="cidade">
+                        <input class="input" id="city" type="text" name="city" data-validate-field="city">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="state">Estado:</label>
                     <div class="select">
-                        <select class="input" id="state" required="required" name="estado"></select>
+                        <select class="input" id="state" name="state" data-validate-field="state"></select>
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control"></div>
-                        <label class="radio" for="house">
-                            <input type="radio" id="house" name="residence" required="required">
-                            Casa
-                        </label>
-                        <br>
-                        <label class="radio" for="condominium">
-                            <input type="radio" id="condominium" name="residence">
-                            Apartamento
-                        </label>
-                    </div>
+                    <label class="radio" for="house">
+                        <input type="radio" id="house" name="residence" data-validate-field="residence">
+                        Casa
+                    </label>
+                    <br>
+                    <label class="radio" for="condominium">
+                        <input type="radio" id="condominium" name="residence" data-validate-field="residence">
+                        Apartamento
+                    </label>
                 </div>
+
 
                 <div class="field">
                     <label class="label" for="resume">Currículo:</label>
                     <div class="control">
-                        <textarea class="textarea" id="resume" maxlength="1000" required="required" name="curriculo"></textarea>
+                        <textarea class="textarea" id="resume" name="resume" data-validate-field="resume"></textarea>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="position">Cargo:</label>
                     <div class="control">
-                        <input class="input" id="position" type="text" maxlength="40" required="required" name="cargo">
+                        <input class="input" id="position" type="text" name="job" data-validate-field="job">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="jobDescription">Descrição do cargo:</label>
                     <div class="control">
-                        <input class="input" id="jobDescription" type="text" maxlength="500" required="required" name="descricao">
+                        <input class="input" id="jobDescription" type="text" name="description"
+                            data-validate-field="description">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label" for="startDate">Data de início:</label>
                     <div class="control">
-                        <input class="input" id="startDate" type="text" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" required="required" name="data">
+                        <input class="input" id="myInputId" type="text" placeholder="dd/mm/aaaa" name="date"
+                            data-validate-field="date">
                     </div>
                 </div>
-                            
+
                 <!-- Por que não podemos usar input type="date"? -->
                 <div class="buttons">
                     <button class="button is-dark is-rounded" id="sendButton">Enviar</button>
@@ -114,10 +135,10 @@
                     <label class="label" for="consoleLogForm"></label>
                     <div class="control" id="consoleLogForm"></div>
                 </div>
-
             </form>
         </div>
-    </section>  
-    
+     </section>
+
 </body>
+
 </html>
