@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,7 @@
         .section {
             width: 100%;
             margin: 0 auto;
-            background-color: azure;
+            background-color: salmon;
         }
 
         .newform {
@@ -22,10 +21,12 @@
             margin: 0 auto;
         }
 
+        body {
+            color: white;
+            font-weight: bold;
+        }
     </style>
-
 </head>
-
 <body>
     <section class="section">
         <div class="container">
@@ -34,7 +35,6 @@
             </header>
         </div>
     </section>
-
     <section class="section">
         <div class="container">
             <form class="newform" action="" method="GET">
@@ -75,23 +75,27 @@
                 </div>
 
                 <div class="field">
-                    <label class="label" for="state">Estado:</label>
-                    <div class="select">
-                        <select class="input" id="state" name="state" data-validate-field="state"></select>
-                    </div>
+                    <label class="label" for="state">Estado:
+                        <div class="control">
+                            <div class="select">
+                                <select class="input" id="state" name="state" data-validate-field="state"></select>
+                            </div>
+                        </div>
+                    </label>
                 </div>
 
                 <div class="field">
-                    <div class="control"></div>
-                    <label class="radio" for="house">
-                        <input type="radio" id="house" name="residence" data-validate-field="residence">
-                        Casa
-                    </label>
-                    <br>
-                    <label class="radio" for="condominium">
-                        <input type="radio" id="condominium" name="residence" data-validate-field="residence">
-                        Apartamento
-                    </label>
+                    <div class="control">
+                        <label class="radio" for="house">
+                            <input type="radio" id="house" name="residence" data-validate-field="residence">
+                            Casa
+                        </label>
+                        <br>
+                        <label class="radio" for="condominium">
+                            <input type="radio" id="condominium" name="residence" data-validate-field="residence">
+                            Apartamento
+                        </label>
+                    </div>
                 </div>
 
 
@@ -137,8 +141,6 @@
                 </div>
             </form>
         </div>
-     </section>
-
+    </section>
 </body>
-
 </html>

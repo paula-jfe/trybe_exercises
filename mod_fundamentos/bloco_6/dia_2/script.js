@@ -1,7 +1,7 @@
 window.onload = function () {
     let sendForm = document.querySelector("#sendButton");
     let clearButton = document.querySelector("#clearAll");
-    let states = ["--", "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"];
+    let states = ["", "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"];
     let selectStates = document.querySelector("#state");
     let resumeSummary = document.querySelector("#consoleLogForm");
     let getName = document.querySelector("#fullName");
@@ -71,46 +71,47 @@ window.onload = function () {
 
         messages: {
             name: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 40 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 40',
             },
             email: {
-                required: 'The field is required',
-                email: 'Please, type a valid email',
-                maxLength: 'The field must contain a maximum of 50 characters',
+                required: 'Campo obrigatório',
+                email: 'Digite um email válido',
+                maxLength: 'O limite máximo de caracteres é 50',
             },
             cpf: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 40 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 11',
+                minLength: 'O limite mínimo de caracteres é 11',
             },
             address: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 200 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 200',
             },
             city: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 28 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 28',
             },
             state: {
-                required: 'The field is required',
+                required: 'Campo obrigatório',
             },
             residence: {
-                required: 'The field is required',
+                required: 'Campo obrigatório',
             },
             resume: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 1000 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 1000',
             },
             job: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 40 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 40',
             },
             description: {
-                required: 'The field is required',
-                maxLength: 'The field must contain a maximum of 500 characters',
+                required: 'Campo obrigatório',
+                maxLength: 'O limite máximo de caracteres é 500',
             },
             date: {
-                required: 'The field is required',
+                required: 'Campo obrigatório',
             },
         },
 
