@@ -15,8 +15,8 @@ window.onload = function () {
     let getResume = document.querySelector("#resume");
     let getPosition = document.querySelector("#position");
     let getJobDescription = document.querySelector("#jobDescription");
-    var picker = document.getElementById('myInputId').DatePickerX.init({ format: "dd/mm/yyyy" });
-    console.log(picker.value);
+    document.getElementById('myInputId').DatePickerX.init({ format: "dd/mm/yyyy" });
+    
     
     sendForm.addEventListener("click", summaryAll);
     clearButton.addEventListener("click", clearFunction);
@@ -66,16 +66,103 @@ window.onload = function () {
             date: {
                 required: true,
             },
-        }
-    });
-    
-    new window.JustValidate('.form', {
-        Messages: {
-          required: 'The field is required',
-          email: 'Please, type a valid email',
-          maxLength: 'The field must contain a maximum of :value characters',
-          minLength: 'The field must contain a minimum of :value characters',
+            
         },
+
+        messages: {
+            name: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 40 characters',
+            },
+            email: {
+                required: 'The field is required',
+                email: 'Please, type a valid email',
+                maxLength: 'The field must contain a maximum of 50 characters',
+            },
+            cpf: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 40 characters',
+            },
+            address: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 200 characters',
+            },
+            city: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 28 characters',
+            },
+            state: {
+                required: 'The field is required',
+            },
+            residence: {
+                required: 'The field is required',
+            },
+            resume: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 1000 characters',
+            },
+            job: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 40 characters',
+            },
+            description: {
+                required: 'The field is required',
+                maxLength: 'The field must contain a maximum of 500 characters',
+            },
+            date: {
+                required: 'The field is required',
+            },
+        },
+
+        invalidFormCallback: function (error) {
+            console.log(error)
+
+        },
+        submitHandler: function (form, values) {
+            console.log(form);
+            console.log(values);
+            let createElementSummary = document.createElement("p");
+            let setNameValue = getName.value;
+            let setEmailValue = getEmail.value;
+            let setCpfValue = getCpf.value;
+            let setAddressValue = getAddress.value;
+            let setCityValue = getCity.value;
+            let setStateValue = getState.value;
+            let setResumeValue = getResume.value;
+            let setPositionValue = getPosition.value;
+            let setDescriptionValue = getJobDescription.value;
+            let setDateValue = document.getElementById('myInputId').value;
+    
+            if (getHouse.checked == true) {
+                createElementSummary.innerHTML =
+                    "Nome: " + setNameValue + "<br>" +
+                    "Email: " + setEmailValue + "<br>" +
+                    "CPF: " + setCpfValue + "<br>" +
+                    "Endereço: " + setAddressValue + "<br>" +
+                    "Cidade: " + setCityValue + "<br>" +
+                    "Estado: " + setStateValue + "<br>" +
+                    "Casa" + "<br>" +
+                    "Currículo: " + setResumeValue + "<br>" +
+                    "Cargo: " + setPositionValue + "<br>" +
+                    "Descrição do cargo: " + setDescriptionValue + "<br>" +
+                    "Data de início: " + setDateValue + "<br>";
+                resumeSummary.appendChild(createElementSummary);
+            } else if (getHouse.checked == false) {
+                createElementSummary.innerHTML =
+                    "Nome: " + setNameValue + "<br>" +
+                    "Email: " + setEmailValue + "<br>" +
+                    "CPF: " + setCpfValue + "<br>" +
+                    "Endereço: " + setAddressValue + "<br>" +
+                    "Cidade: " + setCityValue + "<br>" +
+                    "Estado: " + setStateValue + "<br>" +
+                    "Casa" + "<br>" +
+                    "Currículo: " + setResumeValue + "<br>" +
+                    "Cargo: " + setPositionValue + "<br>" +
+                    "Descrição do cargo: " + setDescriptionValue + "<br>" +
+                    "Data de início: " + setDateValue + "<br>";
+                resumeSummary.appendChild(createElementSummary);
+            }
+        }
     });
     
     function clearFunction() {
@@ -105,48 +192,6 @@ window.onload = function () {
     }
 
     function summaryAll(event) {
-        event.preventDefault();
-        let createElementSummary = document.createElement("p");
-        let setNameValue = getName.value;
-        let setEmailValue = getEmail.value;
-        let setCpfValue = getCpf.value;
-        let setAddressValue = getAddress.value;
-        let setCityValue = getCity.value;
-        let setStateValue = getState.value;
-        let setResumeValue = getResume.value;
-        let setPositionValue = getPosition.value;
-        let setDescriptionValue = getJobDescription.value;
-        let setDateValue = picker.value;
-        console.log(setDateValue);
-
-        if (getHouse.checked == true) {
-            createElementSummary.innerHTML =
-                "Nome: " + setNameValue + "<br>" +
-                "Email: " + setEmailValue + "<br>" +
-                "CPF: " + setCpfValue + "<br>" +
-                "Endereço: " + setAddressValue + "<br>" +
-                "Cidade: " + setCityValue + "<br>" +
-                "Estado: " + setStateValue + "<br>" +
-                "Casa" + "<br>" +
-                "Currículo: " + setResumeValue + "<br>" +
-                "Cargo: " + setPositionValue + "<br>" +
-                "Descrição do cargo: " + setDescriptionValue + "<br>" +
-                "Data de início: " + setDateValue + "<br>";
-            resumeSummary.appendChild(createElementSummary);
-        } else if (getHouse.checked == false) {
-            createElementSummary.innerHTML =
-                "Nome: " + setNameValue + "<br>" +
-                "Email: " + setEmailValue + "<br>" +
-                "CPF: " + setCpfValue + "<br>" +
-                "Endereço: " + setAddressValue + "<br>" +
-                "Cidade: " + setCityValue + "<br>" +
-                "Estado: " + setStateValue + "<br>" +
-                "Casa" + "<br>" +
-                "Currículo: " + setResumeValue + "<br>" +
-                "Cargo: " + setPositionValue + "<br>" +
-                "Descrição do cargo: " + setDescriptionValue + "<br>" +
-                "Data de início: " + setDateValue + "<br>";
-            resumeSummary.appendChild(createElementSummary);
-        }
+        /* event.preventDefault(); */
     }
 }
