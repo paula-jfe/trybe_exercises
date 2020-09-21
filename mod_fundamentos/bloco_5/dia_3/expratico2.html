@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  <label>Bônus:
+    <input type="number" id="bonus-input" size="2">
+  </label>
+  <button id="bonus-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+    let setSquareNumber = document.querySelector("#square-input");
+    let setHalfNumber = document.querySelector("#half-input");
+    let setFractionNumber = document.querySelector("#percent1-input");
+    let setWholeNumber = document.querySelector("#percent2-input");
+    let setCircleArea = document.querySelector("#area-input");
+    let setBonus = document.querySelector("#bonus-input");
+    let getSolution = document.querySelector("#solution");
+
+    let squareNumberButton = document.querySelector("#square-button");
+    let HalfNumberButton = document.querySelector("#half-button");
+    let percentNumberButton = document.querySelector("#percent-button");
+    let circleAreaButton = document.querySelector("#area-button");
+    let bonusButton = document.querySelector("#bonus-button");
+
+    /* 
+    squareNumberButton.addEventListener("click", squareNumber);
+    HalfNumberButton.addEventListener("click", halfNumber);
+    percentNumberButton.addEventListener("click", percentOf);
+    circleAreaButton.addEventListener("click", areaOfCircle); 
+    setBonus.addEventListener("click", bonusFunction);
+    */
+
+    /* let timeout = null; */
+    setSquareNumber.addEventListener("keyup", squareNumber);
+    setHalfNumber.addEventListener("keyup", halfNumber);
+    setWholeNumber.addEventListener("keyup", percentOfKey);
+    setCircleArea.addEventListener("keyup", areaOfCircle);
+    setBonus.addEventListener("keyup", bonusFunction);
+    /* https://schier.co/blog/wait-for-user-to-stop-typing-using-javascript */
+
+    function squareNumber() {
+      setTimeout(function() {
+        let getSquareNumber = setSquareNumber.value * setSquareNumber.value;
+        console.log("The result of squaring the number " + setSquareNumber.value + " is " + getSquareNumber + ".");
+        getSolution.innerHTML = getSquareNumber;
+      }, 1000);
+    }
+
+    function halfNumber() {
+      setTimeout(function() {
+        let getHalfNumber = setHalfNumber.value / 2;
+        console.log("Half of " + setHalfNumber.value + " is " + getHalfNumber + ".");
+        getSolution.innerHTML = getHalfNumber;
+      }, 1000);
+    }
+
+    function percentOf() {
+      setTimeout(function() {
+        let number1 = setFractionNumber.value;
+        let number2 = setWholeNumber.value;
+        let percentOfNumber = (number1 / number2) * 100;
+        console.log(number1 + " is " + percentOfNumber + "% of " + number2 + ".");
+        getSolution.innerHTML = percentOfNumber;
+      }, 1000);
+    }
+
+    function areaOfCircle() {
+      setTimeout(function() {
+        let radiusNumber = setCircleArea.value;
+        let areaCalc = Math.PI * (radiusNumber * radiusNumber);
+        let areaRounded = Math.round((areaCalc + Number.EPSILON) * 100) / 100;
+      /* https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary */
+        console.log("The area for a circle with radius " + radiusNumber + " is " + areaRounded + ".");
+        getSolution.innerHTML = areaRounded;
+      }, 1000);
+    }
+
+    function percentOfKey() {
+      setTimeout(function() {
+      let number1 = setFractionNumber.value;
+      let number2 = setWholeNumber.value;
+        if (number1 >= 0 && number2 > 0) {
+          let percentOfNumber = (number1 / number2) * 100;
+          console.log(number1 + " is " + percentOfNumber + "% of " + number2 + ".");
+          getSolution.innerHTML = percentOfNumber;
+        }
+      }, 1000);
+    }
+
+    function bonusFunction() {
+      setTimeout(function() {
+      let op1 = setBonus.value / 2;
+      let op2 = op1 * op1;
+      let op3 = Math.PI * (op2 * op2);
+      let op4 = (op2 / op3) * 100;
+      let op4R = Math.round((op4 + Number.EPSILON) * 100) / 100;
+      getSolution.innerHTML = op4R;
+      console.log(op2 + " is " + op4R + "% of " + op3 + ".");
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

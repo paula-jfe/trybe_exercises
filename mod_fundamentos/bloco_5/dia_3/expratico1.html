@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+ 
+ <h1>Mad Libs</h1>
+ 
+ <ul>
+  <li>Noun: <input type="text" id="noun">
+  <li>Adjective: <input type="text" id="adjective">
+  <li>Someone's Name: <input type="text" id="person">
+ </ul>
+ 
+ <button id="lib-button">Lib it!</button>
+  
+ <div id="story"></div>
+
+ <script>
+  let story = document.querySelector("#story");
+  let character = document.querySelector("#person");
+  let storyNoun= document.querySelector("#noun");
+  let characteristic = document.querySelector("#adjective");
+  let generateStory = document.querySelector("#lib-button");
+  
+  generateStory.addEventListener("click", makeMadLib);
+
+  function makeMadLib() {
+    story.innerText = character.value + " likes " + storyNoun.value + " because they're " + characteristic.value + " than anything!";
+  }
+</script>
+ </body>
+</html>

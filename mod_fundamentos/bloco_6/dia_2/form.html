@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bulma.min.css" rel="stylesheet">
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <header id="firstForm">
+                <h1 class="title has-text-centered">Meu Primeiro Formulário</h1>
+            </header>
+        </div>
+    </section>    
+
+    <section class="section">
+        <div class="container">
+            <form action="" method="GET">
+
+                <div class="field">
+                    <label class="label" for="fullName">Nome:</label>
+                    <div class="control">
+                        <input class="input" id="fullName" type="text" maxlength="40" required="required" name="name">
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label" for="email">Email:</label>
+                    <div class="control">
+                        <input class="input" id="email" type="text" maxlength="50" required="required" name="email">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="cpfdata">CPF:</label>
+                    <div class="control">
+                        <input class="input" id="cpfdata" type="text" maxlength="11" required="required" name="cpf">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="address">Endereço:</label>
+                    <div class="control">
+                        <input class="input" id="address" type="text" maxlength="200" required="required" name="endereço">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="city">Cidade:</label>
+                    <div class="control">
+                        <input class="input" id="city" type="text" maxlength="28" required="required" name="cidade">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="state">Estado:</label>
+                    <div class="select">
+                        <select class="input" id="state" required="required" name="estado"></select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control"></div>
+                        <label class="radio" for="house">
+                            <input type="radio" id="house" name="residence" required="required">
+                            Casa
+                        </label>
+                        <br>
+                        <label class="radio" for="condominium">
+                            <input type="radio" id="condominium" name="residence">
+                            Apartamento
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="resume">Currículo:</label>
+                    <div class="control">
+                        <textarea class="textarea" id="resume" maxlength="1000" required="required" name="curriculo"></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="position">Cargo:</label>
+                    <div class="control">
+                        <input class="input" id="position" type="text" maxlength="40" required="required" name="cargo">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="jobDescription">Descrição do cargo:</label>
+                    <div class="control">
+                        <input class="input" id="jobDescription" type="text" maxlength="500" required="required" name="descricao">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="startDate">Data de início:</label>
+                    <div class="control">
+                        <input class="input" id="startDate" type="text" placeholder="dd/mm/aaaa" minlength="10" maxlength="10" required="required" name="data">
+                    </div>
+                </div>
+                            
+                <!-- Por que não podemos usar input type="date"? -->
+                <div class="buttons">
+                    <button class="button is-dark is-rounded" id="sendButton">Enviar</button>
+                    <button class="button is-dark is-rounded" id="clearAll">Limpar</button>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="consoleLogForm"></label>
+                    <div class="control" id="consoleLogForm"></div>
+                </div>
+
+            </form>
+        </div>
+    </section>  
+    
+</body>
+</html>
