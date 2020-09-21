@@ -3,16 +3,19 @@
 Start with this webpage, which has a single img tag of an animated GIF of a cat walking. -->
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="utf-8" />
-  <title>Cat Walk</title>
- </head>
- <body>
-  
-  <img id="catStyle" style="position:absolute;" width ="200px" src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
-  
- 
-<!-- Add a script tag at the bottom of the page, where you'll put all your code.
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cat Walk</title>
+</head>
+
+<body>
+
+    <img id="catStyle" style="position:absolute;" width="200px"
+        src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
+
+
+    <!-- Add a script tag at the bottom of the page, where you'll put all your code.
 Create a variable to store a reference to the img.
 Change the style of the img to have a "left" of "0px", so that it starts at the left hand of the screens.
 Create a function called catWalk() that moves the cat 10 pixels to the right of where it started, by changing the "left" style property.
@@ -23,109 +26,131 @@ Bonus #1: When the cat reaches the right-hand of the screen, restart them at the
 Bonus #2: When the cat reaches the right-hand of the screen, make them move backwards instead. They should keep walking back and forth forever and ever.
 
 Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk. -->
-<script>
-    window.onload = function () {
-        let catImage = document.querySelector("#catStyle");
-        let innerSize = window.innerWidth;
-        let middleSize = (window.innerWidth) / 2;
-        let catImageSize = catImage.width;
-        let division = catImageSize / 2;
-        let middleReference = middleSize + division;
-        let catReference = ((window.innerWidth) / 2) - 148;
-        let time = setTimeout(catWalk, 10000);
+    <script>
+        window.onload = function () {
+            let catImage = document.querySelector("#catStyle");
+            let innerSize = window.innerWidth;
+            let middleSize = (window.innerWidth) / 2;
+            let catImageSize = catImage.width;
+            let division = catImageSize / 2;
+            let middleReference = middleSize + division;
+            let catReference = ((window.innerWidth) / 2) - 148;
+            let time = setTimeout(catWalk, 10000);
 
-        console.log(middleReference);
-        console.log(middleSize);
-        catImage.style.left = "0px";
-        moveCatForward = true;
-        moveCatBackwards = false; 
+            console.log(middleReference);
+            console.log(middleSize);
+            catImage.style.left = "0px";
+            moveCatForward = true;
+            moveCatBackwards = false;
 
-        /* Bônus 1 */
+            /* Bônus 1 */
 
-        /* function catWalk() {
-            let incrementLeft = 10;
-            catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
-            catMarginRight = parseInt(catImage.style.left) - incrementLeft;
-            if (catMarginLeft < innerSize) {
-                catImage.style.left = catMarginLeft + "px";
-            } else {
-                catImage.style.left = "0px";
-            }
-        } */
+            /* 
+            function catWalk() {
+                let incrementLeft = 10;
+                catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
+                catMarginRight = parseInt(catImage.style.left) - incrementLeft;
+                if (catMarginLeft < innerSize) {
+                    catImage.style.left = catMarginLeft + "px";
+                } else {
+                    catImage.style.left = "0px";
+                }
+            } 
+            */
 
-        /* Bônus 3 */
+            /* Bônus 2 */
 
-        
+            /* 
+            function catWalk() {
+                let catBegin = "0px";
+                let incrementLeft = 10;
+                catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
+                catMarginRight = parseInt(catImage.style.left) - incrementLeft;
+                catMarginAndCatLeft = catMarginLeft + catImageSize;
+                if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft < innerWidth) {
+                    catForward();
+                } else if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft >= innerSize) {
+                    firstChange();
+                } else if (moveCatForward == false && moveCatBackwards == true && catMarginRight > 0) {
+                    catBackward();
+                } else if (moveCatForward == false && moveCatBackwards == true && catMarginRight <= 0) {
+                    secondChange();
+                }
+            } 
+            */
+            
+            /* Bônus 3 */
 
-        function catWalk() {
-            let catBegin = "0px";
-            let incrementLeft = 10;
-            catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
-            catMarginRight = parseInt(catImage.style.left) - incrementLeft;
-            catMarginAndCatLeft = catMarginLeft + catImageSize;
-            /* catMarginAndCatRight = catMarginRight; */
+            function catWalk() {
+                let catBegin = "0px";
+                let incrementLeft = 10;
+                catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
+                catMarginRight = parseInt(catImage.style.left) - incrementLeft;
+                catMarginAndCatLeft = catMarginLeft + catImageSize;
+                /* catMarginAndCatRight = catMarginRight; */
 
-            if ((moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft < (middleReference - 10)) || (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft < innerSize && catMarginAndCatLeft > (middleReference + 10))) {
-                catForward();
-            } else if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft >= innerSize) {
-                firstChange();
-            } else if (moveCatForward == false && moveCatBackwards == true && catMarginRight > 0) {
-                catBackward();
-            } else if (moveCatForward == false && moveCatBackwards == true && catMarginRight <= 0) {
-                secondChange();
-            } else if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft > (middleReference - 10) && catMarginAndCatLeft < (middleReference + 10)) {
+                if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft < innerWidth) {
+                    catForward();
+                } else if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft >= innerSize) {
+                    firstChange();
+                } else if (moveCatForward == false && moveCatBackwards == true && catMarginRight > 0) {
+                    catBackward();
+                } else if (moveCatForward == false && moveCatBackwards == true && catMarginRight <= 0) {
+                    secondChange();
+                } /* else if (moveCatForward == true && moveCatBackwards == false && catMarginAndCatLeft > (middleReference - 10) && catMarginAndCatLeft < (middleReference + 10)) {
                 setInterval(dancingCat, 200);
                 clearInterval();
                 catImage.style.left = catMarginLeft + "px";
+            } */
+                    console.log(moveCatForward);
+                    console.log(moveCatBackwards);
+                }
+
+                function catForward() {
+                    catImage.style.left = catMarginLeft + "px";
+                }
+
+                function firstChange() {
+                    moveCatForward = false;
+                    moveCatBackwards = true;
+                }
+
+                function catBackward() {
+                    catImage.style.left = catMarginRight + "px";
+                }
+
+                function secondChange() {
+                    moveCatForward = true;
+                    moveCatBackwards = false;
+                }
+
+                /*             function dancingCat() {
+                                catImage.src = "https://i.kym-cdn.com/photos/images/newsfeed/000/048/390/nya_nya_dance_with_tulli_by_Monikatz.gif";
+                                catImage.style.left = catReference + "px";
+                                clearInterval();
+                            } */
+
+
+                /*         function moveForwards() {
+                            let incrementLeft = 10;
+                            catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
+                            catImage.style.left = catMarginLeft + "px";
+                        }
+                
+                        function moveForwards() {
+                            let incrementRight = 10;
+                            catMarginRight = parseInt(catImage.style.right) - incrementLeft;
+                            catImage.style.right = catMarginRight + "px";
+                        } */
+
+
+                window.setInterval(catWalk, 50);
+
+
             }
-            console.log(moveCatForward);
-            console.log(moveCatBackwards);
-        }       
 
-            function catForward() {
-                catImage.style.left = catMarginLeft + "px";
-            }
-
-            function firstChange() {
-                moveCatForward = false;
-                moveCatBackwards = true;
-            }
-
-            function catBackward() {
-                catImage.style.left = catMarginRight + "px";
-            }
-
-            function secondChange() {
-                moveCatForward = true;
-                moveCatBackwards = false; 
-            }
-
-            function dancingCat() {
-                catImage.src = "https://i.kym-cdn.com/photos/images/newsfeed/000/048/390/nya_nya_dance_with_tulli_by_Monikatz.gif";
-                catImage.style.left = catReference + "px";
-                clearInterval();
-            }
-        
-
-/*         function moveForwards() {
-            let incrementLeft = 10;
-            catMarginLeft = parseInt(catImage.style.left) + incrementLeft;
-            catImage.style.left = catMarginLeft + "px";
-        }
-
-        function moveForwards() {
-            let incrementRight = 10;
-            catMarginRight = parseInt(catImage.style.right) - incrementLeft;
-            catImage.style.right = catMarginRight + "px";
-        } */
-
-
-        window.setInterval(catWalk, 50);
-
-        
-    }
-
-</script>
+    </script>
 
 </body>
+
 </html>
