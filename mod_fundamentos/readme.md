@@ -1,11 +1,11 @@
 **Módulo 1: Fundamentos do Desenvolvimento Web**
 
 
-Bloco_1:
-Introdução - Unix & Shell
-Unix & Bash - Parte 1
-Unix & Bash - Parte 2
-Shell Script
+Bloco_1:<br>
+Introdução - Unix & Shell<br>
+Unix & Bash - Parte 1<br>
+Unix & Bash - Parte 2<br>
+Shell Script<br>
 
 Bloco_2:
 Git & GitHub - O que é e para que serve
