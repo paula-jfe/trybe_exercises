@@ -1,4 +1,4 @@
-*Módulo 1: Fundamentos do Desenvolvimento Web*
+**Módulo 1: Fundamentos do Desenvolvimento Web**
 
 Bloco_1
 Fundamentos do Desenvolvimento Web
