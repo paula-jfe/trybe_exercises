@@ -1,24 +1,24 @@
 **Módulo 1: Fundamentos do Desenvolvimento Web**
 
 
-Bloco_1:<br>
-Introdução - Unix & Shell<br>
-Unix & Bash - Parte 1<br>
-Unix & Bash - Parte 2<br>
-Shell Script<br>
+Bloco_1:
+- Introdução - Unix & Shell
+- Unix & Bash - Parte 1
+- Unix & Bash - Parte 2
+- Shell Script
 
 Bloco_2:<br>
-Git & GitHub - O que é e para que serve<br>
-Git & GitHub - Entendendo os comandos<br>
-Internet - Entendendo como ela funciona<br>
+- Git & GitHub - O que é e para que serve<br>
+- Git & GitHub - Entendendo os comandos<br>
+- Internet - Entendendo como ela funciona<br>
 
 Bloco_3:<br>
-Introdução - HTML & CSS<br>
-HTML & CSS - Estruturas de página<br>
-HTML & CSS - Primeiros passos em CSS<br>
-HTML & CSS - Seletores e posicionamento<br>
-HTML Semântico<br>
-Projeto - Lessons Learned (Respositório trybe_projects)<br>
+- Introdução - HTML & CSS<br>
+- HTML & CSS - Estruturas de página<br>
+- HTML & CSS - Primeiros passos em CSS<br>
+- HTML & CSS - Seletores e posicionamento<br>
+- HTML Semântico<br>
+- Projeto - Lessons Learned (Respositório trybe_projects)<br>
 
 Bloco_4:<br>
 Introdução - JavaScript<br>
