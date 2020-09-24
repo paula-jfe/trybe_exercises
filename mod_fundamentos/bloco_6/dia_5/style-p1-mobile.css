@@ -1,0 +1,19 @@
+#centro {
+    width: 100%;
+}
+#topo {
+    background: #ff0;
+}
+#topo h1 {
+    color: #f00;
+}
+.padding-colunas {
+    display: flex;
+    flex-direction: row;
+    background: #f00;
+    margin-top: 5px;
+}
+.items {
+    flex: 1 1 auto;
+    width: 50%;
+}
