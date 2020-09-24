@@ -97,4 +97,3 @@ Mais uma vez, faça junto com o autor do vídeo para que você possa ver na prá
 style-p1-mobyle: Agora vamos praticar mais!
 Altere o código do exercício anterior (index-p1.html e style-p1.css) para que o CSS específico da media query seja carregado a partir de um outro arquivo, por exemplo style-mobile-p1.css;
 Ainda no código do exercício anterior, altere as cores de cada um dos elementos da página para uma escala de cinza quando a orientação da página mudar para a horizontal (landscape).
-
