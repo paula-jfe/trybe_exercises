@@ -1,0 +1,91 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  align-self: center;
+  margin: 10px;
+}
+
+h2 {
+  align-self: center;
+  margin: 10px;
+}
+
+h3 {
+  align-self: center;
+  margin: 10px;
+}
+
+.row {
+  margin: 10px;
+}
+
+.olLeft {
+  word-wrap: break-word;
+}
+
+#divOne {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+}
+
+#divTwo {
+  margin: 0;
+  padding: 10px;
+}
+
+#divThree {
+  margin: 0;
+  padding: 10px;
+}
+
+#divFour {
+  margin: 0;
+  padding: 10px;
+}
+
+#divFive {
+  margin: 0;
+  padding: 10px;
+}
+
+#divSix {
+  margin: 0;
+  padding: 10px;
+}
+
+#divSeven {
+  margin: 0;
+  padding: 10px;
+}
+
+img {
+  border: 10px double white;
+  margin: 20px;
+  border-radius: 5%;
+}
+
+ol {
+  margin: 20px;
+}
+
+@include media-breakpoint-up($breakpoint) {
+  @media print and (min-height:100vw) and (max-height: 120vw) {
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .col-sm-12, .col-sm-7, .col-sm-5 {
+      width: 100%;
+    }
+  }
+} 
