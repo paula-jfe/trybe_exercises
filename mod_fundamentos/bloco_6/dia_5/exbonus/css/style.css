@@ -77,15 +77,10 @@ ol {
   margin: 20px;
 }
 
-@include media-breakpoint-up($breakpoint) {
-  @media print and (min-height:100vw) and (max-height: 120vw) {
-    .row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .col-sm-12, .col-sm-7, .col-sm-5 {
-      width: 100%;
-    }
+@media print and (min-height:100vw) and (max-height: 120vw) {
+  .col-sm-12, .col-sm-7, .col-sm-5 {
+    align-self: flex-start !important;
+    width: 100%;
   }
-} 
+}
+
