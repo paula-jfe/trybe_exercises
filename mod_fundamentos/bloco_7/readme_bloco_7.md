@@ -105,3 +105,117 @@ HTML; ...
 _____________________________________________________________________________________________________________________________________________________________________________________________________
 
 bloco_7/dia_2
+
+exparteI1: Basic JavaScript: Accessing Object Properties with Variables
+Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
+<!-- 
+Here is an example of using a variable to access a property:
+
+var dogs = {
+  Fido: "Mutt",  Hunter: "Doberman",  Snoopie: "Beagle"
+};
+var myDog = "Hunter";
+var myBreed = dogs[myDog];
+console.log(myBreed); // "Doberman"
+Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows:
+
+var someObj = {
+  propName: "John"
+};
+function propPrefix(str) {
+  var s = "prop";
+  return s + str;
+}
+var someProp = propPrefix("Name"); // someProp now holds the value 'propName'
+console.log(someObj[someProp]); // "John"
+Note that we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name. -->
+
+Set the playerNumber variable to 16. Then, use the variable to look up the player's name and assign it to player.
+- PlayerNumber should be a number;
+- The variable player should be a string;
+- The value of player should be "Montana";
+- You should use bracket notation to access testObj;
+- You should not assign the value Montana to the variable player directly;
+- You should be using the variable playerNumber in your bracket notation.
+
+exparteI2: Basic JavaScript: Updating Object Properties
+After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+<!-- For example, let's look at ourDog:
+
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; Now when we evaluate ourDog.name, instead of getting "Camper", we'll get his new name, "Happy Camper". -->
+
+Update the myDog object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
+- You should update myDog's "name" property to equal "Happy Coder".
+- You should not edit the myDog definition.
+
+exparteII: Para os exercícios a seguir, use o seguinte código.
+<!-- const lesson1 = {
+  materia: 'Matemática',
+  numeroEstudantes: 20,
+  professor: 'Maria Clara',
+  turno: 'manhã',
+};
+
+const lesson2 = {
+  materia: 'História',
+  numeroEstudantes: 20,
+  professor: 'Carlos',
+};
+
+const lesson3 = {
+  materia: 'Matemática',
+  numeroEstudantes: 10,
+  professor: 'Maria Clara',
+  turno: 'noite',
+}; -->
+
+1 - Crie uma função para adicionar o turno da manhã na lesson2. Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
+2 - Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
+3 - Crie uma função para mostrar o tamanho de um objeto.
+4 - Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
+5 - Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign. Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3. Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
+console.log(allLessons);
+<!-- 
+{
+  lesson1:
+   { materia: 'Matemática',
+     numeroEstudantes: 20,
+     professor: 'Maria Clara',
+     turno: 'manhã' },
+  lesson2:
+   { materia: 'História',
+     numeroEstudantes: 20,
+     professor: 'Carlos',
+     turno: 'noite' },
+  lesson3:
+   { materia: 'Matemática',
+     numeroEstudantes: 10,
+     professor: 'Maria Clara',
+     turno: 'noite' }
+}; -->
+
+6 - Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
+7 - Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
+<!-- console.log(getValueByNumber(lesson1, 0)); -->
+
+8 - Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
+<!-- console.log(verifyPair(lesson3, 'turno', 'noite'));
+// Output: true,
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+// Output: false -->
+
+exbonus: 
+1 - Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+2 - Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+<!-- console.log(createReport(allLessons, 'Maria Clara'))
+/* {
+  professor: 'Maria Clara',
+  aulas: [ 'Matemática', 'Matemática' ],
+  estudantes: 30
+} */ -->

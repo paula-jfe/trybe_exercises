@@ -77,10 +77,24 @@ ol {
   margin: 20px;
 }
 
-@media print and (min-height:100vw) and (max-height: 120vw) {
+@media print {
+  .row {
+    display: flex !important; 
+    justify-content: flex-start !important;
+  }
+
   .col-sm-12, .col-sm-7, .col-sm-5 {
     align-self: flex-start !important;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    color: black !important;
+    text-align: center !important;
+    background-color: yellow !important;
+  }
+
+  .foto {
+    width: 100% !important;
   }
 }
 
