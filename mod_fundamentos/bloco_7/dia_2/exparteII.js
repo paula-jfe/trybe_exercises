@@ -62,13 +62,12 @@ console.log(getKeyPosition(lesson1, 0));
 /* Exercício 8 */
 const verifyObject = (object, key, value) => {
   const arrayVerify = Object.entries(object);
-  let status = false;
   for (index = 0; index < arrayVerify.length; index += 1) {
     if (arrayVerify[index][0] === key && arrayVerify[index][1] === value) {
-      status = true;
+      return true;
     }
   }
-  return status;
+  return false;
 }
 
 console.log(verifyObject(lesson3, 'turno', 'noite'));
