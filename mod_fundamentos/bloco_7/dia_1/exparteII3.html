@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício dia 1 bloco 7 parte III</title>
+</head>
+<body>
+  <h1>Contador Digital</h1>
+  <p id='digitalCounter'>0</p>
+  <button id='counter'>Contador</button>
+  <script>
+    getCounter = document.querySelector('#counter');
+    getDigital = document.querySelector('#digitalCounter');
+    let clickCount = 0;
+    
+ /*    getCounter.addEventListener('click', () => {
+      clickCount += 1;
+      getDigital.innerHTML = clickCount;
+    } */
+
+    getCounter.addEventListener('click', () => getDigital.innerHTML = clickCount += 1);
+
+  </script>
+</body>
+</html>

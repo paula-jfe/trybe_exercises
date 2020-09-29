@@ -1,0 +1,288 @@
+html {
+    box-sizing: border-box;
+}
+    
+*, *:before, *:after {
+    box-sizing: inherit;
+    }
+
+body {
+    font-size: large;
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: xx-large;
+}
+
+
+@media (max-width: 400px) {
+    body {
+        background-color: lightskyblue;
+        text-align: justify;
+        margin: 5%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        text-align: center;
+    }
+    
+    header {
+        font-size: x-large;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: x-large;
+    }
+
+    nav.nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    a.navTag {
+        margin: 2%;
+        text-decoration: none;
+        background-color: white;
+        border-radius: 5px;
+        padding: 2%;
+        color: darkblue;
+    }
+
+    a:visited, a:hover, a:active {
+        color: inherit;
+    }
+
+    ul.chapters {
+        margin: 0%;
+        background-color: white;
+        padding: 10px;
+        line-height: 50px;
+    }
+
+    ul.chapters li {
+        list-style-type: upper-roman;
+        list-style-position: inside;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    ul.information {
+        margin: 0%;
+        background-color: darkblue;
+        color: white;
+        padding: 10px;
+        line-height: 50px;
+    }
+
+    ul.information li {
+        list-style-type: none;
+        font-size: 20px;
+        text-align: left;
+        padding: 2%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+    body {
+        background-color: lightgreen;
+        text-align: justify;
+        margin: 10%;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 10%;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 10%;
+    }
+
+    h3 {
+        text-align: center;
+        margin: 10%;
+    }
+    
+    header {
+        font-size: x-large;
+        text-align: center;
+    }
+
+    header p {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 5%;
+        font-size: x-large;
+    }
+
+    nav.nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    a.navTag {
+        margin: 2%;
+        text-decoration: none;
+        background-color: white;
+        width: 30%;
+        border-radius: 5px;
+        padding: 2%;
+        color: darkblue;
+    }
+
+    a:visited, a:hover, a:active {
+        color: inherit;
+    }
+
+    ul.chapters {
+        margin: 0%;
+        background-color: white;
+        padding: 10px;
+        line-height: 50px;
+    }
+
+    ul.chapters li {
+        list-style-type: upper-roman;
+        list-style-position: inside;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    ul.information {
+        margin: 0%;
+        background-color: white;
+        color: black;
+        padding: 10px;
+        line-height: 50px;
+    }
+
+    ul.information li {
+        list-style-type: none;
+        font-size: 20px;
+        text-align: left;
+        padding: 2%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1800px) {
+    body {
+        background-color: lightpink;
+        text-align: justify;
+        margin: 10%;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 5%;
+        font-size: 50px;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 5%;
+        font-size: 40px;
+    }
+
+    h3 {
+        text-align: center;
+        margin: 5%;
+        font-size: 30px;
+    }
+    
+    header {
+        font-size: xx-large;
+        text-align: center;
+        color: deeppink;
+    }
+
+    header p {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 5%;
+        font-size: xx-large;
+    }
+
+    nav.nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    a.navTag {
+        margin: 2%;
+        text-decoration: none;
+        background-color: white;
+        width: 30%;
+        border-radius: 5px;
+        padding: 2%;
+        color: darkblue;
+    }
+
+    a:visited, a:hover, a:active {
+        color: inherit;
+    }
+
+    ul.chapters {
+        margin: 0%;
+        background-color: white;
+        padding: 10px;
+        line-height: 80px;
+    }
+
+    ul.chapters li {
+        list-style-type: upper-roman;
+        list-style-position: inside;
+        font-size: 36px;
+        text-align: left;
+    }
+
+    ul.information {
+        margin: 0%;
+        background-color: white;
+        color: black;
+        padding: 10px;
+        line-height: 20px;
+    }
+
+    ul.information li {
+        list-style-type: none;
+        font-size: 36px;
+        text-align: left;
+        padding: 2%;
+    }
+}
