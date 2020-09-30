@@ -4,7 +4,7 @@ const assert = require('assert');
 
 const wordLengths = (outputWords) => {
   const newArrayOfWords = [];
-  for (index = 0; index < outputWords.length; index += 1) {
+  for (let index = 0; index < outputWords.length; index += 1) {
     newArrayOfWords.push(outputWords[index].length);
   }
   return newArrayOfWords;
