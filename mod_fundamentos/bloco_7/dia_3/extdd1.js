@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-/* Escreva a função addOne para passar nos testes já implementados. */
+/* 1 - Escreva a função addOne para passar nos testes já implementados. */
 
 const addOne = (functionObject) => {
   let newMemoryArray = [];

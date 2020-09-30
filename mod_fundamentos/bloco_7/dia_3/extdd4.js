@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-/* Escreva a função findTheNeedle para passar nos testes já implementados. */
+/* 4 - Escreva a função findTheNeedle para passar nos testes já implementados. */
 const findTheNeedle = (theInput, theWord) => {
   const position = theInput.indexOf(theWord);
   return position;

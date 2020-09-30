@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-/* Escreva a função addAllnumbers para passar nos testes já implementados. */
+/* 3 - Escreva a função addAllnumbers para passar nos testes já implementados. */
 const addAllnumbers = (sumNumbers) => {
   let newSum = 0;
   for (let index in sumNumbers) {

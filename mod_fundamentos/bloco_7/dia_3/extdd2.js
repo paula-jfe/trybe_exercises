@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-/* Escreva a função wordLengths para passar nos testes já implementados. */
+/* 2 - Escreva a função wordLengths para passar nos testes já implementados. */
 
 const wordLengths = (outputWords) => {
   const newArrayOfWords = [];
