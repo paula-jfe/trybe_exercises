@@ -1,33 +1,27 @@
 const assert = require('assert');
 
-/* Escreva a função removeMiddle para passar nos testes já implementados. */
+/* 3 - Escreva a função removeMiddle para passar nos testes já implementados. */
+
+const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
 
 const removeMiddle = (arrayOfWords) => {
   const getMiddle = (Math.round(arrayOfWords.length / 2)) - 1;
   const newArray = [];
+  const removedPosition = [];
   for (let index = 0; index < arrayOfWords.length; index += 1) {
     if (index !== getMiddle) {
-      newArray.push(arrayOfWords[index]);
+      newArray.push(arrayOfWords[index])
+    } else {
+      removedPosition.push(arrayOfWords[getMiddle]);
     }
   }
-  return newArray;
+  Object.assign(arrayOfWords, newArray);
+  arrayOfWords.pop();
+  return removedPosition;
 }
 
-/* const removeMiddle = (arrayOfWords) => {
-  const getMiddle = Math.round((arrayOfWords.length / 2) - 1);
-  const newArray = arrayOfWords.splice(getMiddle, 1);
-  return arrayOfWords;
-} */
-
-const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
 const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
 const output = removeMiddle(words);
 const expectedOutput = ['queen'];
-
-/* const getMiddle = (Math.round(words.length / 2)) - 1;
-const jumpedWord = [];
-jumpedWord.push(words[getMiddle]);
-console.log(jumpedWord); */
-
 assert.deepStrictEqual(output, expectedOutput);
-/* assert.deepStrictEqual(words, expectedWords); */
+assert.deepStrictEqual(words, expectedWords);

@@ -1,3 +1,8 @@
+/* 1 - Critérios de aceite: Uma chamada bem-sucedida de uma função getChange deve retornar uma lista com o valor das moedas que serão devolvidas à pessoa
+Essa lista deve estar no formato decrescente de valor.
+É permitida a repetição do valor de moedas, por exemplo, [200, 100, 50, 20, 10, 2, 2]
+Um erro com a mensagem paid value is not enough deve ser lançado se o valor pago for menor que o valor da compra */
+
 const getChange = (payable, paid) => {
   const coins = [200, 100, 50, 20, 10, 5, 2, 1];
   const change = [];
@@ -37,8 +42,3 @@ expected = [200, 100, 50, 20, 10, 5, 2, 1];
 assert.deepStrictEqual(result, expected);
 
 assert.throws(() => { getChange(100, 10); }, /^Error: paid value is not enough$/);
-
-/* 1 - Critérios de aceite: Uma chamada bem-sucedida de uma função getChange deve retornar uma lista com o valor das moedas que serão devolvidas à pessoa
-Essa lista deve estar no formato decrescente de valor.
-É permitida a repetição do valor de moedas, por exemplo, [200, 100, 50, 20, 10, 2, 2]
-Um erro com a mensagem paid value is not enough deve ser lançado se o valor pago for menor que o valor da compra */
