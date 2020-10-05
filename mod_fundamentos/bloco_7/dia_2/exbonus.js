@@ -21,6 +21,11 @@ const lesson3 = {
 /* Exercício 5 feito na parte II */
 const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 console.log(allLessons);
+const object1stKeys = Object.keys(allLessons);
+const prof = allLessons[object1stKeys[0]].professor;
+const stud = allLessons[object1stKeys[0]].numeroEstudantes;
+console.log(prof);
+console.log(stud);
 
 /* Exercício bônus 1 */
 const howManyStudents = object => {
@@ -36,3 +41,22 @@ const howManyStudents = object => {
 console.log(howManyStudents(allLessons));
 
 /* Exercício bônus 2 */
+/* Aulas que o professor ministrou e número total de estudantes */
+const report = (object, teacherName) => {
+  const object1stKeys = Object.keys(allLessons);
+  let studentsNumber = 0;
+  let reportObject = {};
+  let classes = [];
+  for (index = 0; index < object1stKeys.length; index += 1) {
+    if (object[object1stKeys[index]].professor === teacherName) {
+      studentsNumber += object[object1stKeys[index]].numeroEstudantes;
+      classes.push(object[object1stKeys[index]].materia);
+    }
+  }
+  reportObject.professor = teacherName;
+  reportObject.estudantes = studentsNumber;
+  reportObject.aulas = classes;
+  return reportObject;
+}
+
+console.log(report(allLessons, 'Maria Clara'));
