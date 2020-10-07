@@ -65,34 +65,35 @@ const books = [
 
 const expected_result = 'O Senhor dos Anéis';
 
-function authorWith3DotsOnName() {
-  const authorName = books.map((object) => {
-    return {
-      author: object.author.name,
-      book: object.name
-    }
-  });
-  const arrayOfName = authorName.map((object) => object.author.split(''));
-  const getName = arrayOfName.find((array) => {
-    return (array[1] === '.' && array[4] === '.' && array[7] === '.');
-  })
-  const authorDefined = getName.join('');
-  const getBook = authorName.find((compare) => compare.author === authorDefined);
-  return getBook.book;
+const getNameAndBook = objects => {
+  return {
+    author: objects.author.name,
+    book: objects.name
+  }
 }
 
-/*   return getName.map((setBook) => {
-    return bookName.name;
-  }) */
-/*   arrayOfName.forEach((item) => {
-    if (item === '.' && counter < 3) {
-      console.log(item);
-      counter += 1;
-      console.log(counter);
-    } else if (item === '.' && counter >= 3) {
-      toBeNamed = authorArray.join();
-      console.log(toBeNamed);
-    }
-  }); */
+const getAuthorNameInArray = object => {
+  object.author.split('');
+}
+
+const findNameWithThreeDots = array => {
+  return (array[1] === '.' && array[4] === '.' && array[7] === '.');
+}
+
+function authorWith3DotsOnName() {
+/*   
+  const authorsNamesAndBooks = books.map(getNameAndBook);
+  const arrayOfAuthorName = authorsNamesAndBooks.map(getAuthorNameInArray);
+  const nameWithThreeDots = arrayOfAuthorName.find(findNameWithThreeDots);
+  const authorDefined = nameWithThreeDots.join('');
+  const bookFound = authorsNamesAndBooks.find((compare) => compare.author === authorDefined);
+  return bookFound.book; 
+*/
+
+  return books.find((object) => {
+    const nameSplitted = object.author.name.split('');
+    return (nameSplitted[1] === '.' && nameSplitted[4] === '.' && nameSplitted[7] === '.');
+  }).name;
+}
 
 assert.deepStrictEqual(authorWith3DotsOnName(), expected_result);
