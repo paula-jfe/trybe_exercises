@@ -17,9 +17,11 @@ function containsA() {
   const countEveryA = flatten.reduce((accumulator, currentElement) => {
     if (currentElement.toUpperCase() === 'A') {
       return accumulator + 1;
+    } else {
+      return accumulator;
     }
-  }, 0)
-  console.log(countEveryA);
+  }, 0);
+  return countEveryA;
 }
 
 
