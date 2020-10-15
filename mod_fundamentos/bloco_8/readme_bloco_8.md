@@ -1674,7 +1674,7 @@ const shipLength = ({name, length, measurementUnit = "meters"}) => `${name} is $
 
 assert.equal(shipLength(ships[0]), "Titanic is 269.1 meters long")
 assert.equal(shipLength(ships[1]), "Queen Mary 2 is 1132 feet long")
-assert.equal(shipLength(ships[2]), "Yamato is 256 meters long") -->
+assert.equal(shipLength(ships[2]), "Yamato is 256 meters long" -->
 
 ex8: Escreva uma função greet que, dado o nome de uma pessoa, retorna uma mensagem de cumprimento:
 Dica: use default params.
