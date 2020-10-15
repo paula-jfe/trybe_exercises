@@ -9,3 +9,4 @@ const rectangles = [rectangle1, rectangle2, rectangle3];
 for (index of rectangles) {
     assert.strictEqual(rectangleArea(...index), index[0]*index[1]);
 }
+
