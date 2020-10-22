@@ -1,4 +1,6 @@
-/* const assert = require('assert');
+/* /* Questão 1 */
+/*
+const assert = require('assert');
 
 const userFullName = ({ firstName, lastName }) => `Hello! My name is ${firstName} ${lastName}`;
 const userNationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
@@ -18,6 +20,8 @@ assert.equal(getUser(callback(userNationality)), "Ivan is Russian"); // complete
 /* const userFullName = ({ firstName, lastName }) => `Hello! My name is ${firstName} ${lastName}`;
 const userNationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
 
+/* Questão 2 */ 
+/*
 const getUser = callback => {
   setTimeout(() => {
     const userToReturn = {
@@ -32,6 +36,7 @@ const getUser = callback => {
 getUser(userFullName); // deve imprimir "Hello! My name is Ivan Ivanovich" depois de um certo tempo
 getUser(userNationality); // deve imprimir "Ivan is Russian" depois de um certo tempo
  */
+/* Questão 3 */
 
 const countryName = ({ name }) => console.log(`Returned country is ${name}`);
 const countryCurrency = ({ name, currency }) => console.log(`${name}'s currency is the ${currency}`);
