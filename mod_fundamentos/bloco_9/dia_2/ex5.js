@@ -16,9 +16,8 @@ const sum = newArray.reduce((acc, nextValue) => {
 }, 0)
 
 const promiseTest = new Promise((resolve, reject) => {
-  (sum < 8000) ? resolve(sum) : reject()
+  (sum < 8000) ? resolve(sum): reject()
 })
-
 .then((sum) => resolveArray.map(item => sum / item))
 .then((array) => console.log(array.reduce((acc, nextNumber) => acc + nextNumber)))
 .catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'));

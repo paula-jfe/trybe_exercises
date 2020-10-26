@@ -9,13 +9,10 @@ function populateArray() {
 }
 
 populateArray();
-console.log(newArray);
 
 const summatory = newArray.reduce((acc, nextValue) => {
  return acc + nextValue;
 }, 0)
-
-console.log(summatory);
 
 const promiseTest = new Promise((resolve, reject) => {
   (summatory < 8000) ? resolve() : reject()
