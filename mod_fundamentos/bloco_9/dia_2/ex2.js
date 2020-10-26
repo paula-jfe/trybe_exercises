@@ -1,4 +1,3 @@
-
 const newArray = [];
 
 function populateArray() {
