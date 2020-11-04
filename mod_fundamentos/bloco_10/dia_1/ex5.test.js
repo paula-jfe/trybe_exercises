@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 const obj1 = {
   title: 'My Title',
   description: 'My Description',
@@ -16,8 +14,14 @@ const obj3 = {
 };
 
 /* Compare dois objetos (JSON) para verificar se são idênticos ou não */
-assert.notDeepStrictEqual(obj3, obj2);
+test('The objects obj2 and obj3 are different', () => {
+  expect(obj3).not.toEqual(obj2);
+});
 
-assert.notDeepStrictEqual(obj3, obj1);
+test('The objects obj1 and obj2 are equal', () => {
+  expect(obj2).toEqual(obj1);
+});
 
-assert.deepStrictEqual(obj2, obj1);
+test('The objects obj1 and obj3 are different', () => {
+  expect(obj3).not.toEqual(obj1);
+});

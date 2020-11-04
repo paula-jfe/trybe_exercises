@@ -147,3 +147,148 @@ sendMarsTemperature(greet, handleError); -->
 _____________________________________________________________________________________________________________________________________________________________________________________________________
 
 bloco_9/dia_2
+
+teste: Em seu editor, crie um novo arquivo e escreva o seguinte comando:
+
+<!-- const promise = new Promise((resolve, reject) => {
+}); -->
+
+Para simular uma situação de sucesso e erro, vamos utilizar o Math.random() para sortear um valor de 0 a 10. Se o valor for entre 0 e 5 (com 5 incluso), será um fracasso, caso o valor seja entre 5 e 10, será um sucesso. Nosso programa ficaria assim:
+
+<!-- const promise = new Promise((resolve, reject) => {
+  const number = Math.floor(Math.random() * 11);
+
+  if (number > 10 || number <= 5) {
+    return reject(console.log(`Que fracasso =( Nosso número foi ${number}`));
+  }
+  resolve(console.log(`Que sucesso =) nosso número foi ${number}`));
+}); -->
+
+Execute algumas vezes o programa para ver o que acontece.
+Uma coisa que você irá reparar é que quando o programa é bem sucedido, seu output aparece normalmente. Já quando ele é mal sucedido, ele lança um error! Essa é a principal diferença entre o resolve e o reject, exatamente o que queríamos demonstrar.
+Vamos começar falando sobre o .then(). Para isso , vamos refatorar nossa promise:
+
+<!-- const promise = new Promise((resolve, reject) => {
+  const number = Math.floor(Math.random() * 11);
+
+  if (number > 10 || number <= 5) {
+    return reject(console.log(`Que fracasso =( Nosso número foi ${number}`));
+  }
+  resolve(number);
+})
+.then(number => `Que sucesso =) nosso número foi ${number}`)
+.then(msg => console.log(msg)); -->
+
+Vamos ver o que acontece no código acima. A promise é executada e após sua execução, caso o número seja algo entre 5 e 10, o resolve retorna o número que é passado para o primeiro .then() como number. Por sua vez, ele retorna a frase Que sucesso =) nosso número foi ${number} que é passado como argumento para o segundo .then(), que o usa para "logar" no console.
+Ok, mas o erro continua acontecendo, o que podemos fazer em relação a isso? Agora entra o .catch()! Vamos adicioná-lo ao código:
+
+<!-- const promise = new Promise((resolve, reject) => {
+  const number = Math.floor(Math.random()* 11);
+
+  if (number > 10 || number <= 5) {
+    return reject(number);
+  }
+  resolve(number);
+})
+.then(number => `Que sucesso =) nosso número foi ${number}`)
+.then(msg => console.log(msg))
+.catch(number => console.log(`Que fracasso =( Nosso número foi ${number}`)); -->
+
+Se executarmos o código acima, vamos ver que o erro anterior desapareceu pois agora ele foi tratado! Assim como o .then() recebe o retorno de resolve, o .catch() recebe o retorno do reject, que é passado para ele como argumento de sua função interna. Assim, quando a promise retorna um reject, pula todos os .then() e é tratado no primeiro .catch() que encontrar. E tem mais! O .catch() também "pega" qualquer erro que acontecer dentro de qualquer .then() anterior a ele, por esse motivo ele é geralmente usado no final.
+Vamos criar uma promise que faz um fetch apenas para um endpoint específico. Para isso, vamos usar como "endpoint" o url "https://api.chucknorris.io/jokes/random?category=dev" que nos retorna elogios sobre Chuck Norris (elogios, porque ninguém faz piadas com Chuck Norris).
+Agora veja o código abaixo:
+
+<!-- const fetch = require('node-fetch');
+
+function verifiedFetch(url) {
+  return new Promise((resolve, reject) => {
+    if (url === 'https://api.chucknorris.io/jokes/random?category=dev') {
+      fetch(url)
+        .then((r) => r.json())
+        .then((r) => resolve(r.value));
+    } else {
+      reject(new Error('endpoint não existe'));
+    }
+  });
+} -->
+
+Vamos dar uma olhada rápida no código. Primeiro criamos a função verifiedFetch e passamos o url do nosso endpoint. Depois retornamos uma promise, transformando nossa função em uma função assíncrona. Agora, dentro da promise fazemos uma verificação. Se o endpoint for o certo, usamos o fetch para fazer uma chamada ao endpoint, transformamos a resposta em um json utilizando o método .json(), e para finalizar usamos o resolve para retornar a nossa resposta. Caso o url não seja o certo, levantamos um error. Perceba aqui que usamos o construtor new Error para levantar um error. Usar esse construtor dentro do reject é uma boa prática importante e vamos usá-lo a partir de agora.
+Agora, leia o código abaixo e, sem executá-lo, responda a seguinte pergunta: O que será exibido no console ao se executar sendJokeToFriend?
+
+<!-- const fetch = require('node-fetch');
+
+function verifiedFetch(url) {
+  return new Promise((resolve, reject) => {
+    if (url === 'https://api.chucknorris.io/jokes/random?category=dev') {
+      fetch(url)
+        .then((r) => r.json())
+        .then((r) => resolve(r.value));
+    } else {
+      reject(new Error('endpoint não existe'));
+    }
+  });
+}
+
+function sendJokeToFriend(name) {
+  const message = verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+    .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+    .catch((err) => err);
+  console.log(message);
+}
+
+sendJokeToFriend("Anna") -->
+
+Agora execute a função sendJokeToFriend e veja se você acertou. Como vemos, recebemos o seguinte log: Promise { <pending> }. Vamos ver o que acontece aqui. Como vimos, verifiedFetch é uma promise, logo, é assíncrono. Quando o javascript executa a função, ele manda ela para "área especial" e passa para próxima função que é o console. Como a promise ainda não voltou com o conteúdo de message, vemos que a promise ainda está no estado pending. Para visualizar ainda melhor, retire o fetch e execute um resolve que retorna qualquer valor, assim a promise terminará sua execução imediatamente. Antes de executar, pense: Agora que a promise resolve imediatamente, quando o console.log for executado a Promise estará em pending ou já terá um resultado ? Execute e veja a resposta.
+Como você viu, ela esta em pending, mesmo sendo resolvida imediatamente. Isso aconteceu pois, mesmo resolvendo na hora, a promise vai para sua área e sai da fila. Quando ela retorna, mesmo que de imediato, ela volta pro final da fila e o console.log está na frente, sendo executado primeiro. Para resolver esse problema existem 2 maneiras. A primeira é usar o fluxo da promise e colocar o console.log dentro do .then(). Essa solução e ótima, mas pode ficar dificil de se manter e ler a medida que o número de passos aumenta e a medida que cada passo fica mais complexo também, assim, surgiu a terceira digievolução evolução das promises, o async e o await!
+O async é uma mão na roda. Essa funcionalidade transforma qualquer função em uma promise. Para começar a usá-la, basta colocar o async antes da definição da função. Agora é só colocar no congelador e ta pronto o sorvetinho transformar o que é resolve em return e o que é reject em throw e BOOM! Sua promise com async está pronta. Vamos refatorar a função verifiedFetch para usar async:
+
+<!-- const fetch = require('node-fetch');
+
+async function verifiedFetch(url) {
+  if (url === 'https://api.chucknorris.io/jokes/random?category=dev') {
+    return fetch(url)
+      .then((r) => r.json())
+      .then((r) => r.value);
+  }
+  throw new Error('endpoint não existe');
+}
+
+function sendJokeToFriend(name) {
+  const message = verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+    .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+    .catch((err) => err);
+  console.log(message);
+}
+
+sendJokeToFriend("Anna") -->
+
+A funcionalidade async sozinha é fantástica mas não resolve nosso problema com a função sendJokeToFriend. Assim, junto com ela vem um bônus, o await. O await só pode ser usado dentro de uma função com async e ela faz exatamente o que diz, faz com o que a função espere uma resposta para continuar sua execução. Vamos refatorar sendJokeToFriend:
+
+<!-- const fetch = require('node-fetch');
+
+async function verifiedFetch(url) {
+  if (url === 'https://api.chucknorris.io/jokes/random?category=dev') {
+    return fetch(url)
+      .then((r) => r.json())
+      .then((r) => (r.value));
+  }
+  throw new Error('endpoint não existe');
+}
+
+async function sendJokeToFriend(name) {
+  const message = await verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
+    .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+    .catch((err) => err);
+  console.log(message);
+}
+
+sendJokeToFriend("Anna") -->
+
+questoes: 
+1 - O que é um código que é executado de modo assíncrono? Qual é a diferença disso para um código que é executado de modo síncrono?
+2 - Quando você tem que enfileirar várias callbacks, que problema surge?
+3 - Por que as Promises são uma forma de se resolver esse problema?
+4 - Quando você vai se comunicar com uma API, tal comunicação deve ser síncrona ou assíncrona? Lembre-se de que o serviço ao qual você está se conectando pode demorar muito ou pouco para dar retorno, pode estar fora do ar etc.
+5 - Dada a resposta anterior, o que é fetch e para que ele serve?
+
+ex1: 
