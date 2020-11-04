@@ -10,6 +10,7 @@ describe ('testando implementações diferentes', () => {
     expect(randomNumber).toHaveBeenCalledTimes(1);
     expect(randomNumber).toHaveBeenCalledWith(5, 10, 100);
   })
+  
   test('mockando função que recebe um parâmetro e retorna seu dobro', () => {
     randomNumber.mockReset();
     randomNumber = jest.fn().mockImplementationOnce(a => a * 2);
