@@ -1,0 +1,104 @@
+1 - React => Create a Simple JSX Element:
+
+const JSX = <h1>Hello JSX!</h1>;
+
+2 - React => Create a Complex JSX Element:
+
+const JSX = (
+  <div>
+    <h1>Paragraph One</h1>
+    <p>Paragraph Two</p>
+    <ul>
+        <li>Element One</li>
+        <li>Element Two</li>
+        <li>Element Three</li>
+    </ul>
+  </div>
+)
+
+3 - React => Add Comments in JSX:
+
+const JSX = (
+  <div>
+    <h1>This is a block of JSX</h1>
+    <p>Here is a subtitle</p>
+    {/* Cria um parágrafo */}
+  </div>
+);
+
+4 - React => Render HTML Elements to the DOM:
+
+const JSX = (
+  <div>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+
+ReactDOM.render(JSX, document.getElementById('challenge-node'));
+
+5 - React => Define an HTML Class in JSX:
+
+const JSX = (
+  <div className='myDiv'>
+    <h1>Add a class to this div</h1>
+  </div>
+);
+
+6 - React => Learn About Self-Closing JSX Tags:
+
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br />
+    <p>Be sure to close all tags!</p>
+    <hr />
+  </div>
+);
+
+7 - React => Create a Stateless Functional Component:
+
+const MyComponent = function() {
+  return (
+    <div>Oi</div>
+  )
+}
+
+8 - React => Create a React Component:
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+      );
+  };
+};
+
+9 - React => Create a Component with Composition:
+
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+          <ChildComponent />
+      </div>
+    );
+  }
+};
+
