@@ -19,3 +19,4 @@ const promiseTest = new Promise((resolve, reject) => {
 })
 .then(() => console.log('Deu certo? Deu sim!'))
 .catch(() => console.log('Deu certo? Só que não!'));
+
