@@ -17,6 +17,5 @@ const summatory = newArray.reduce((acc, nextValue) => {
 const promiseTest = new Promise((resolve, reject) => {
   (summatory < 8000) ? resolve() : reject()
 })
-.then(() => console.log('Deu certo? Deu sim!'))
-.catch(() => console.log('Deu certo? Só que não!'));
-
+.then(() => console.log('Deu bom!'))
+.catch(() => console.log('Deu ruim!'));
