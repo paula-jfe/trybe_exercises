@@ -9,7 +9,7 @@
 <body>
   <div>
     Clicked: <span id="value">0</span> times
-    ClickCount: <span id="valueC">0</span> times
+    ClickCount: <span id="valueClickCount">0</span> times
     <button id="increment">+</button>
     <button id="decrement">-</button>
     <button id="multi">Incrementa 10</button>
@@ -25,18 +25,25 @@
 
     const INCREMENT = 'INCREMENT';
     const DECREMENT = 'DECREMENT';
-    const CLICKCOUNT = 'CLICKCOUNT';
 
-    function counterReducer(state = { value: 0, valueC: 0 }, action) {
+    function counterReducer(state = { value: 0, valueClickCount: 0, historyOfClicks: [] }, action) {
+      const newObject = Object.assign({}, state);
+      
       switch (action.type) {
         case INCREMENT:
-          return state.value + action.value;
+          const incValue = newObject.value += action.value || 1;
+          newObject.valueClickCount += 1;
+          newObject.historyOfClicks.push(action.value || 1);
+          console.log(newObject.historyOfClicks);
+          return newObject;
         case DECREMENT:
-          return state.value - action.value;
-        case CLICKCOUNT:
-          return state.valueC + 1;
+          const decValue = newObject.value -= action.value || 1;
+          newObject.valueClickCount += 1;
+          newObject.historyOfClicks.push((-1) * (action.value || 1));
+          console.log(newObject.historyOfClicks);
+          return newObject;
         default:
-          return state.value;
+          return state;
       }
     }
 
@@ -46,24 +53,21 @@
       .addEventListener('click', () => {
         const incrementValue = document.querySelector('#incQuantity').value;
         store.dispatch({ type: INCREMENT, value: parseInt(incrementValue) })
-        store.dispatch({ type: CLICKCOUNT })
       })
 
     document.getElementById('decrement')
       .addEventListener('click', () => {
         const decrementValue = document.querySelector('#decQuantity').value;
         store.dispatch({ type: DECREMENT, value: parseInt(decrementValue) });
-        store.dispatch({ type: CLICKCOUNT })
       })
 
     document.getElementById('multi')
       .addEventListener('click', () => {
         store.dispatch({ type: INCREMENT, value: 10 })
-        store.dispatch({ type: CLICKCOUNT })
       })
 
-    store.subscribe(() => document.getElementById('value').innerHTML = store.getState().toString());
-    store.subscribe(() => document.getElementById('valueC').innerHTML = store.getState().toString());
+    store.subscribe(() => document.getElementById('value').innerHTML = store.getState().value.toString());
+    store.subscribe(() => document.getElementById('valueClickCount').innerHTML = store.getState().valueClickCount.toString());
 
   </script>
 </body>
