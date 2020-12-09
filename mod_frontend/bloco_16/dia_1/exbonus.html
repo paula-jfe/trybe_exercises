@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Redux basic example</title>
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+
+<body>
+  <div>
+    Clicked: <span id="value">0</span> times
+    ClickCount: <span id="valueC">0</span> times
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+    <button id="multi">Incrementa 10</button>
+    <label>Valor para botão Incremento
+      <input id="incQuantity" type="number">
+    </label>
+    <label>Valor para botão Decremento
+      <input id="decQuantity" type="number">
+    </label>
+    
+  </div>
+  <script>
+
+    const INCREMENT = 'INCREMENT';
+    const DECREMENT = 'DECREMENT';
+    const CLICKCOUNT = 'CLICKCOUNT';
+
+    function counterReducer(state = { value: 0, valueC: 0 }, action) {
+      switch (action.type) {
+        case INCREMENT:
+          return state.value + action.value;
+        case DECREMENT:
+          return state.value - action.value;
+        case CLICKCOUNT:
+          return state.valueC + 1;
+        default:
+          return state.value;
+      }
+    }
+
+    const store = Redux.createStore(counterReducer);
+
+    document.getElementById('increment')
+      .addEventListener('click', () => {
+        const incrementValue = document.querySelector('#incQuantity').value;
+        store.dispatch({ type: INCREMENT, value: parseInt(incrementValue) })
+        store.dispatch({ type: CLICKCOUNT })
+      })
+
+    document.getElementById('decrement')
+      .addEventListener('click', () => {
+        const decrementValue = document.querySelector('#decQuantity').value;
+        store.dispatch({ type: DECREMENT, value: parseInt(decrementValue) });
+        store.dispatch({ type: CLICKCOUNT })
+      })
+
+    document.getElementById('multi')
+      .addEventListener('click', () => {
+        store.dispatch({ type: INCREMENT, value: 10 })
+        store.dispatch({ type: CLICKCOUNT })
+      })
+
+    store.subscribe(() => document.getElementById('value').innerHTML = store.getState().toString());
+    store.subscribe(() => document.getElementById('valueC').innerHTML = store.getState().toString());
+
+  </script>
+</body>
+
+</html>
